@@ -143,7 +143,7 @@
     // Ingestion pages
     var ingestPages = [
       { icon: '🏠', url: '/home', bg: '#E8F0FE' },
-      { icon: '📋', url: '/pricing', bg: '#FFF3E0' },
+      { icon: '📋', url: '/pricing', bg: '#EAF2FF' },
       { icon: '❓', url: '/faq', bg: '#E8F5E9' },
       { icon: '📞', url: '/contact', bg: '#FCE4EC' },
       { icon: '📦', url: '/products', bg: '#F3E8FD' },
