@@ -356,18 +356,39 @@
   function initUseCaseTabs() {
     var tabs = document.querySelectorAll('.uc-tab');
     if (!tabs.length) return;
+    var validTabs = ['ecommerce', 'education', 'travel', 'teams'];
+    function activateTab(target) {
+      if (validTabs.indexOf(target) === -1) return;
+      document.querySelectorAll('.uc-tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.uc-panel').forEach(function (p) { p.classList.remove('active'); });
+      var activeTab = document.querySelector('.uc-tab[data-tab="' + target + '"]');
+      var panel = document.getElementById('panel-' + target);
+      if (activeTab) activeTab.classList.add('active');
+      if (panel) panel.classList.add('active');
+    }
+    function activateTabFromHash() {
+      var hash = window.location.hash || '';
+      if (hash.indexOf('#use-case-') !== 0) return;
+      var target = hash.replace('#use-case-', '');
+      activateTab(target);
+    }
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
-        var target = this.getAttribute('data-tab');
-        // Deactivate all
-        document.querySelectorAll('.uc-tab').forEach(function (t) { t.classList.remove('active'); });
-        document.querySelectorAll('.uc-panel').forEach(function (p) { p.classList.remove('active'); });
-        // Activate clicked
-        this.classList.add('active');
-        var panel = document.getElementById('panel-' + target);
-        if (panel) panel.classList.add('active');
+        var target = this.getAttribute('data-tab') || '';
+        activateTab(target);
+        history.replaceState(null, '', '#use-case-' + target);
       });
     });
+    document.querySelectorAll('a[href^="#use-case-"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var hash = this.getAttribute('href') || '';
+        var target = hash.replace('#use-case-', '');
+        activateTab(target);
+        history.replaceState(null, '', hash);
+      });
+    });
+    window.addEventListener('hashchange', activateTabFromHash);
+    activateTabFromHash();
   }
 
   // =============================================
