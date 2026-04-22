@@ -1,18 +1,49 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { absoluteUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Awaylable",
     template: "%s | Awaylable",
   },
   description:
     "When you're away, we are available. Unified customer support and pre-sales automation for Website, WhatsApp, Instagram, and Voice.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
+    url: siteUrl,
+    siteName: "Awaylable",
     title: "Awaylable | AI For Your Company",
     description:
       "Unified customer support and pre-sales automation for Website, WhatsApp, Instagram, and Voice.",
+    images: [
+      {
+        url: absoluteUrl("/images/logo-wordmark.svg"),
+        alt: "Awaylable",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Awaylable | AI For Your Company",
+    description:
+      "Unified customer support and pre-sales automation for Website, WhatsApp, Instagram, and Voice.",
+    images: [absoluteUrl("/images/logo-wordmark.svg")],
   },
   icons: {
     icon: [{ url: "/images/favicon.svg", type: "image/svg+xml" }],

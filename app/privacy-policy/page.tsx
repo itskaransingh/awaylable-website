@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import { absoluteUrl } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Awaylable Privacy Policy.",
+  description:
+    "Awaylable Privacy Policy covering data collection, usage, security, retention, and your rights.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/privacy-policy"),
+    title: "Privacy Policy | Awaylable",
+    description:
+      "Awaylable Privacy Policy covering data collection, usage, security, retention, and your rights.",
+  },
 };
 
 export const dynamic = "force-static";

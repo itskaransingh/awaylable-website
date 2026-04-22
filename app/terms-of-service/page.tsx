@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
+import { absoluteUrl } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Awaylable Terms of Service.",
+  description:
+    "Awaylable Terms of Service for platform usage, responsibilities, limitations, and termination policies.",
+  alternates: {
+    canonical: "/terms-of-service",
+  },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/terms-of-service"),
+    title: "Terms of Service | Awaylable",
+    description:
+      "Awaylable Terms of Service for platform usage, responsibilities, limitations, and termination policies.",
+  },
 };
+
 
 export const dynamic = "force-static";
 

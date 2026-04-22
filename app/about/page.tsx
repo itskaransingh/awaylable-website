@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description: "About Awaylable, a 24x7 AI customer support platform.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/about"),
+    title: "About Awaylable",
+    description: "About Awaylable, a 24x7 AI customer support platform.",
+  },
 };
 
 export const dynamic = "force-static";
