@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../public/css/style.css";
 import "./globals.css";
 import { absoluteUrl, siteUrl } from "@/lib/seo";
 
@@ -86,7 +87,6 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href="/css/style.css" />
       </head>
       <body className="flex flex-col mx-auto min-h-screen overflow-x-hidden">
         {children}
