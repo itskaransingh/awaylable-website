@@ -1,0 +1,113 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-next",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "check-htmltojsx",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"try{require.resolve('htmltojsx');console.log('yes')}catch(e){console.log('no')}"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "generate-home-jsx",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/convert-home-html-to-jsx.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "install-parse5",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"install",
+				"--save-dev",
+				"parse5"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "generate-home-jsx",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/convert-home-html-to-jsx.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "generate-home-jsx",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/convert-home-html-to-jsx.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "generate-home-js-module",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/convert-home-js-to-module.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build-next",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build-next",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "remove-parse5",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"uninstall",
+				"--save-dev",
+				"parse5"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build-next",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		}
+	]
+}
