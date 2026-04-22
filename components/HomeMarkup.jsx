@@ -658,13 +658,16 @@ export default function HomeMarkup() {
                     Core
                   </h3>
                   <div className="pc-price">
-                    ₹2,200
+                    ₹2,499
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
                   <p className="pc-yearly">
                     or ₹2,000/mo billed yearly
+                    <span className="pc-savings">
+                      Save ₹5,988/year
+                    </span>
                   </p>
                   <ul className="pc-features">
                     <li>
@@ -700,13 +703,16 @@ export default function HomeMarkup() {
                     Growth
                   </h3>
                   <div className="pc-price">
-                    ₹8,000
+                    ₹7,999
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
                   <p className="pc-yearly">
-                    or ₹7,000/mo billed yearly
+                    or ₹6,000/mo billed yearly
+                    <span className="pc-savings">
+                      Save ₹23,988/year
+                    </span>
                   </p>
                   <ul className="pc-features">
                     <li>
@@ -739,13 +745,16 @@ export default function HomeMarkup() {
                     Pro
                   </h3>
                   <div className="pc-price">
-                    ₹13,999
+                    ₹14,999
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
                   <p className="pc-yearly">
-                    or ₹11,000/mo billed yearly
+                    or ₹10,500/mo billed yearly
+                    <span className="pc-savings">
+                      Save ₹53,988/year
+                    </span>
                   </p>
                   <ul className="pc-features">
                     <li>
