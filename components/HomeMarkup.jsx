@@ -1,112 +1,22 @@
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+
 export default function HomeMarkup() {
   return (
     <>
-      <header className="header">
-        <div className="header-container">
-          <div className="header-glass">
-            <nav className="nav-desktop">
-              <div className="nav-inner">
-                <a href="/" className="nav-logo">
-                  <span className="logo-text">
-                    awaylable
-                    <span className="logo-dot">
-                      .
-                    </span>
-                  </span>
-                </a>
-                <div className="nav-links">
-                  <a href="#features" className="nav-link">
-                    <span>
-                      Platform
-                    </span>
-                  </a>
-                  <a href="#channels" className="nav-link">
-                    <span>
-                      Channels
-                    </span>
-                  </a>
-                  <a href="#use-cases" className="nav-link">
-                    <span>
-                      Use Cases
-                    </span>
-                  </a>
-                  <a href="#pricing" className="nav-link">
-                    <span>
-                      Pricing
-                    </span>
-                  </a>
-                </div>
-                <div className="nav-ctas">
-                  <a href="#cta">
-                    <button className="btn-sarvam-primary">
-                      <span className="btn-gradient-overlay" />
-                      <span className="btn-label">
-                        Experience Awaylable
-                      </span>
-                    </button>
-                  </a>
-                  <a href="#pricing">
-                    <button className="btn-sarvam-secondary">
-                      <span className="btn-gradient-overlay-light" />
-                      <span className="btn-label">
-                        Talk to Sales
-                      </span>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </nav>
-            <div className="nav-mobile">
-              <div className="nav-mobile-bar">
-                <a href="/" className="nav-logo">
-                  <span className="logo-text" style={{ fontSize: "18px" }}>
-                    awaylable
-                    <span className="logo-dot">
-                      .
-                    </span>
-                  </span>
-                </a>
-                <button className="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-                  <span />
-                  <span />
-                  <span />
-                </button>
-              </div>
-              <div className="mobile-menu" id="mobileMenu">
-                <a href="#features">
-                  Platform
-                </a>
-                <a href="#channels">
-                  Channels
-                </a>
-                <a href="#use-cases">
-                  Use Cases
-                </a>
-                <a href="#pricing">
-                  Pricing
-                </a>
-                <a href="#cta" className="btn-sarvam-primary" style={{ textAlign: "center", marginTop: "12px", justifyContent: "center" }}>
-                  <span className="btn-label">
-                    Experience Awaylable
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader anchorBase="" />
       <main className="main-content">
         <div className="sections-wrapper">
           <section className="hero-section">
             <div className="hero-top-fade" />
-            <img src="images/hero-gradient.svg" alt="" className="hero-bg-gradient" />
+            <img src="/images/hero-gradient.svg" alt="" className="hero-bg-gradient" />
             <div className="hero-radial-glow" />
             <div className="hero-content-area">
               <div className="hero-inner-wrap">
                 <div className="hero-stack">
                   <picture>
-                    <source media="(max-width: 767px)" srcSet="images/motif-blue.svg" />
-                    <img data-animate="motif" src="images/motif.svg" alt="" role="presentation" className="hero-motif-img" />
+                    <source media="(max-width: 767px)" srcSet="/images/motif-blue.svg" />
+                    <img data-animate="motif" src="/images/motif.svg" alt="" role="presentation" className="hero-motif-img" />
                   </picture>
                   <div className="hero-pill" data-section-reveal>
                     <span className="pill-shimmer" aria-hidden="true" />
@@ -180,7 +90,7 @@ export default function HomeMarkup() {
               </div>
             </div>
           </section>
-          <section className="content-section" data-section-reveal id="features">
+<section className="content-section" data-section-reveal id="features">
             <div className="section-inner">
               <div className="section-header-center">
                 <p className="section-eyebrow">
@@ -195,7 +105,7 @@ export default function HomeMarkup() {
               <div className="three-pillars">
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="images/samvaad-motif-01.svg" alt="" className="pillar-motif" />
+                    <img src="/images/samvaad-motif-01.svg" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Unified by design
@@ -206,7 +116,7 @@ export default function HomeMarkup() {
                 </div>
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="images/samvaad-motif-02.svg" alt="" className="pillar-motif" />
+                    <img src="/images/samvaad-motif-02.svg" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Zero-setup intelligence
@@ -217,7 +127,7 @@ export default function HomeMarkup() {
                 </div>
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="images/samvaad-motif-03.svg" alt="" className="pillar-motif" />
+                    <img src="/images/samvaad-motif-03.svg" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Human at the core
@@ -1133,7 +1043,7 @@ export default function HomeMarkup() {
       </main>
       <section className="cta-full" id="cta">
         <div className="cta-full-inner">
-          <img src="images/motif.svg" alt="" style={{ height: "36px", opacity: "0.15", marginBottom: "24px" }} />
+          <img src="/images/motif.svg" alt="" style={{ height: "36px", opacity: "0.15", marginBottom: "24px" }} />
           <h2 className="section-h2" style={{ maxWidth: "600px", margin: "0 auto 12px" }}>
             Ready to automate your customer experience?
           </h2>
@@ -1162,95 +1072,7 @@ export default function HomeMarkup() {
           </div>
         </div>
       </section>
-      <footer className="footer-sarvam">
-        <div className="footer-motif-bg">
-          <img src="images/motif.svg" alt="" className="footer-motif-svg" />
-        </div>
-        <div className="footer-inner-sarvam">
-          <div className="footer-grid">
-            <div className="footer-brand-col">
-              <span className="logo-text" style={{ fontSize: "28px" }}>
-                awaylable
-                <span className="logo-dot">
-                  .
-                </span>
-              </span>
-              <p className="footer-tagline-text">
-                Automated Intelligence. Human Reliability.
-              </p>
-              <p className="footer-tagline-callout">
-                When you're away, we are available.
-              </p>
-              <p className="footer-byline">
-                A solution by
-                <span style={{ color: "#2563EB", fontWeight: "600" }}>
-                  atomnik
-                </span>
-              </p>
-            </div>
-            <div className="footer-col-sarvam">
-              <h4>
-                Product
-              </h4>
-              <a href="#features">
-                Platform
-              </a>
-              <a href="#channels">
-                Channels
-              </a>
-              <a href="#pricing">
-                Pricing
-              </a>
-              <a href="#product">
-                Demo
-              </a>
-            </div>
-            <div className="footer-col-sarvam">
-              <h4>
-                Use Cases
-              </h4>
-              <a href="#use-case-ecommerce">
-                E-commerce
-              </a>
-              <a href="#use-case-education">
-                Education
-              </a>
-              <a href="#use-case-travel">
-                Travel
-              </a>
-              <a href="#use-case-teams">
-                Lean Teams
-              </a>
-            </div>
-            <div className="footer-col-sarvam">
-              <h4>
-                Company
-              </h4>
-              <a href="/about">
-                About
-              </a>
-              <a href="mailto:info@atomnik.com">
-                Contact Us
-              </a>
-              <a href="/privacy-policy">
-                Privacy Policy
-              </a>
-              <a href="/terms-of-service">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-          <div className="footer-bottom-sarvam">
-            <p>
-              © 2026 Atomnik. All rights reserved.
-            </p>
-            <div className="footer-india-badge">
-              <img src="images/flag-india.svg" alt="Indian Flag" className="india-flag-img" />
-              Made in India
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter anchorBase="" />
     </>
   );
 }

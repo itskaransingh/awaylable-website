@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -69,7 +70,7 @@ export default function TermsOfServicePage() {
       <nav style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
         <a href="/about">About</a>
         <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/">Back to Home</a>
+        <Link href="/">Back to Home</Link>
       </nav>
     </main>
   );

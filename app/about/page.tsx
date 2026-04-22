@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -34,10 +35,10 @@ export default function AboutPage() {
         feel reliable and human-friendly at scale.
       </p>
       <nav style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-        <a href="/#cta">Book a Demo</a>
+        <Link href="/#cta">Book a Demo</Link>
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="/terms-of-service">Terms of Service</a>
-        <a href="/">Back to Home</a>
+        <Link href="/">Back to Home</Link>
       </nav>
     </main>
   );
