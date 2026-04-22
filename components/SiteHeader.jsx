@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavMoreMenu from "@/components/NavMoreMenu";
 
 export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-studies" }) {
   const href = (id) => `${anchorBase}#${id}`;
@@ -25,14 +26,15 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <Link href={href("channels")} className="nav-link">
                   <span>Channels</span>
                 </Link>
-                <details className="nav-more">
-                  <summary className="nav-link nav-more-trigger">
-                    <span>More</span>
-                    <span className="nav-chevron" aria-hidden="true">
-                      ▾
-                    </span>
-                  </summary>
-                </details>
+                <div className="nav-more">
+                  <NavMoreMenu
+                    items={[
+                      { href: href("features"), label: "Platform" },
+                      { href: href("use-cases"), label: "Use Cases" },
+                      { href: href("pricing"), label: "Pricing" },
+                    ]}
+                  />
+                </div>
               </div>
               <div className="nav-ctas">
                 <Link href={href("cta")} className="btn-sarvam-primary">
@@ -79,17 +81,6 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <span className="btn-label">Experience Awaylable</span>
               </Link>
             </div>
-          </div>
-          <div className="nav-more-panel">
-            <Link href={href("features")} className="nav-more-item">
-              Platform
-            </Link>
-            <Link href={href("use-cases")} className="nav-more-item">
-              Use Cases
-            </Link>
-            <Link href={href("pricing")} className="nav-more-item">
-              Pricing
-            </Link>
           </div>
         </div>
       </div>
