@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/seo";
 
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -9,6 +10,16 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Explore how Awaylable helps brands answer faster, capture more leads, and keep support running after hours.",
+  alternates: {
+    canonical: "/case-studies",
+  },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/case-studies"),
+    title: "Case Studies | Awaylable",
+    description:
+      "Explore how Awaylable helps brands answer faster, capture more leads, and keep support running after hours.",
+  },
 };
 
 export const dynamic = "force-static";
