@@ -19,21 +19,20 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <Link href={caseStudiesHref} className="nav-link">
                   <span>Case Studies</span>
                 </Link>
-                <Link href={href("features")} className="nav-link">
-                  <span>Platform</span>
+                <Link href="/partners" className="nav-link">
+                  <span>Partners</span>
                 </Link>
                 <Link href={href("channels")} className="nav-link">
                   <span>Channels</span>
                 </Link>
-                <Link href={href("use-cases")} className="nav-link">
-                  <span>Use Cases</span>
-                </Link>
-                <Link href={href("pricing")} className="nav-link">
-                  <span>Pricing</span>
-                </Link>
-                <Link href="/partners" className="nav-link">
-                  <span>Partners</span>
-                </Link>
+                <details className="nav-more">
+                  <summary className="nav-link nav-more-trigger">
+                    <span>More</span>
+                    <span className="nav-chevron" aria-hidden="true">
+                      ▾
+                    </span>
+                  </summary>
+                </details>
               </div>
               <div className="nav-ctas">
                 <Link href={href("cta")} className="btn-sarvam-primary">
@@ -63,11 +62,11 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
             </div>
             <div className="mobile-menu" id="mobileMenu">
               <Link href={caseStudiesHref}>Case Studies</Link>
-              <Link href={href("features")}>Platform</Link>
+              <Link href="/partners">Partners</Link>
               <Link href={href("channels")}>Channels</Link>
+              <Link href={href("features")}>Platform</Link>
               <Link href={href("use-cases")}>Use Cases</Link>
               <Link href={href("pricing")}>Pricing</Link>
-              <Link href="/partners">Partners</Link>
               <Link
                 href={href("cta")}
                 className="btn-sarvam-primary"
@@ -80,6 +79,17 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <span className="btn-label">Experience Awaylable</span>
               </Link>
             </div>
+          </div>
+          <div className="nav-more-panel">
+            <Link href={href("features")} className="nav-more-item">
+              Platform
+            </Link>
+            <Link href={href("use-cases")} className="nav-more-item">
+              Use Cases
+            </Link>
+            <Link href={href("pricing")} className="nav-more-item">
+              Pricing
+            </Link>
           </div>
         </div>
       </div>
