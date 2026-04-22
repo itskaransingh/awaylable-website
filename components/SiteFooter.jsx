@@ -22,9 +22,9 @@ export default function SiteFooter({ anchorBase = "" }) {
               When you&apos;re away, we are available.
             </p>
             <p className="footer-byline">
-              A solution by
+              A solution by<span> </span>
               <span style={{ color: "#2563EB", fontWeight: "600" }}>
-                atomnik
+                 atomnik
               </span>
             </p>
           </div>
