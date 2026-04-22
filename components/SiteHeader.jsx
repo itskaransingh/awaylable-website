@@ -31,6 +31,9 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <Link href={href("pricing")} className="nav-link">
                   <span>Pricing</span>
                 </Link>
+                <Link href="/partners" className="nav-link">
+                  <span>Partners</span>
+                </Link>
               </div>
               <div className="nav-ctas">
                 <Link href={href("cta")} className="btn-sarvam-primary">
@@ -64,6 +67,7 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
               <Link href={href("channels")}>Channels</Link>
               <Link href={href("use-cases")}>Use Cases</Link>
               <Link href={href("pricing")}>Pricing</Link>
+              <Link href="/partners">Partners</Link>
               <Link
                 href={href("cta")}
                 className="btn-sarvam-primary"
