@@ -105,7 +105,7 @@ export default function HomeMarkup() {
               <div className="three-pillars">
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="/images/samvaad-motif-01.svg" alt="" className="pillar-motif" />
+                    <img src="/11.png" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Unified by design
@@ -116,7 +116,7 @@ export default function HomeMarkup() {
                 </div>
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="/images/samvaad-motif-02.svg" alt="" className="pillar-motif" />
+                    <img src="/10.png" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Zero-setup intelligence
@@ -127,7 +127,7 @@ export default function HomeMarkup() {
                 </div>
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="/images/samvaad-motif-03.svg" alt="" className="pillar-motif" />
+                    <img src="/12.png" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Human at the core
@@ -562,39 +562,61 @@ export default function HomeMarkup() {
                   growing businesses.
                 </h2>
               </div>
+              <input className="pricing-billing-input" type="radio" name="pricing-billing" id="pricing-billing-monthly" defaultChecked />
+              <input className="pricing-billing-input" type="radio" name="pricing-billing" id="pricing-billing-yearly" />
+              <div className="pricing-switcher">
+                <div className="pricing-toggle" role="tablist" aria-label="Billing cycle">
+                  <label className="pricing-toggle-option" htmlFor="pricing-billing-monthly">
+                    Monthly
+                  </label>
+                  <label className="pricing-toggle-option pricing-toggle-option-yearly" htmlFor="pricing-billing-yearly">
+                    <span className="pricing-toggle-option-label">
+                      Yearly
+                    </span>
+                    <span className="pricing-toggle-save">
+                      Save upto ₹53,988/year
+                    </span>
+                  </label>
+                </div>
+              </div>
               <div className="pricing-row">
                 <div className="pricing-card-sarvam" data-section-reveal>
-                  <h3 className="pc-name">
-                    Core
-                  </h3>
-                  <div className="pc-price">
+                  <div className="pc-card-head">
+                    <div>
+                      <div className="pc-title-row">
+                        <h3 className="pc-name">
+                          Core
+                        </h3>
+                        <span className="pc-plan-save">
+                          Save ₹5,988/year
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pc-price pc-price-monthly">
                     ₹2,499
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
-                  <p className="pc-yearly">
-                    or ₹2,000/mo billed yearly
-                    <span className="pc-savings">
-                      Save ₹5,988/year
+                  <div className="pc-price pc-price-yearly">
+                    ₹1,999
+                    <span className="pc-per">
+                      /mo
                     </span>
+                  </div>
+                  <p className="pc-yearly pc-yearly-monthly">
+                    or ₹1,999/mo for annual plan
+                  </p>
+                  <p className="pc-yearly pc-yearly-yearly">
+                    or ₹2,499/mo if billed monthly
                   </p>
                   <ul className="pc-features">
-                    <li>
-                      Up to 500 conversations
-                    </li>
-                    <li>
-                      Website widget included
-                    </li>
-                    <li>
-                      Knowledge base auto-ingestion
-                    </li>
-                    <li>
-                      Human escalation
-                    </li>
-                    <li>
-                      Omnichannel as ₹1,000/mo add-on
-                    </li>
+                    <li>Up to 500 conversations</li>
+                    <li>Website widget included</li>
+                    <li>Knowledge base auto-ingestion</li>
+                    <li>Human escalation</li>
+                    <li>Omnichannel as ₹1,000/mo add-on</li>
                   </ul>
                   <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer">
                     <button className="btn-sarvam-secondary pc-btn">
@@ -606,40 +628,45 @@ export default function HomeMarkup() {
                   </a>
                 </div>
                 <div className="pricing-card-sarvam featured" data-section-reveal>
-                  <div className="pc-popular">
-                    Most Popular
+                  <div className="pc-card-head">
+                    <div>
+                      <div className="pc-popular">
+                        Most Popular
+                      </div>
+                      <div className="pc-title-row">
+                        <h3 className="pc-name">
+                          Growth
+                        </h3>
+                        <span className="pc-plan-save">
+                          Save ₹23,988/year
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="pc-name">
-                    Growth
-                  </h3>
-                  <div className="pc-price">
+                  <div className="pc-price pc-price-monthly">
                     ₹7,999
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
-                  <p className="pc-yearly">
-                    or ₹6,000/mo billed yearly
-                    <span className="pc-savings">
-                      Save ₹23,988/year
+                  <div className="pc-price pc-price-yearly">
+                    ₹5,999
+                    <span className="pc-per">
+                      /mo
                     </span>
+                  </div>
+                  <p className="pc-yearly pc-yearly-monthly">
+                    or ₹5,999/mo for annual plan
+                  </p>
+                  <p className="pc-yearly pc-yearly-yearly">
+                    or ₹7,999/mo if billed monthly
                   </p>
                   <ul className="pc-features">
-                    <li>
-                      Up to 3,000 conversations
-                    </li>
-                    <li>
-                      Omnichannel included
-                    </li>
-                    <li>
-                      Advanced lead capture
-                    </li>
-                    <li>
-                      KPI & KG Engine analytics
-                    </li>
-                    <li>
-                      Priority support
-                    </li>
+                    <li>Up to 3,000 conversations</li>
+                    <li>Omnichannel included</li>
+                    <li>Advanced lead capture</li>
+                    <li>KPI & KG Engine analytics</li>
+                    <li>Priority support</li>
                   </ul>
                   <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer">
                     <button className="btn-sarvam-primary pc-btn">
@@ -651,43 +678,80 @@ export default function HomeMarkup() {
                   </a>
                 </div>
                 <div className="pricing-card-sarvam" data-section-reveal>
-                  <h3 className="pc-name">
-                    Pro
-                  </h3>
-                  <div className="pc-price">
+                  <div className="pc-card-head">
+                    <div>
+                      <div className="pc-title-row">
+                        <h3 className="pc-name">
+                          Pro
+                        </h3>
+                        <span className="pc-plan-save">
+                          Save ₹53,988/year
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pc-price pc-price-monthly">
                     ₹14,999
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
-                  <p className="pc-yearly">
-                    or ₹10,500/mo billed yearly
-                    <span className="pc-savings">
-                      Save ₹53,988/year
+                  <div className="pc-price pc-price-yearly">
+                    ₹10,499
+                    <span className="pc-per">
+                      /mo
                     </span>
+                  </div>
+                  <p className="pc-yearly pc-yearly-monthly">
+                    or ₹10,499/mo for annual plan
+                  </p>
+                  <p className="pc-yearly pc-yearly-yearly">
+                    or ₹14,999/mo if billed monthly
                   </p>
                   <ul className="pc-features">
-                    <li>
-                      Unlimited conversations
-                    </li>
-                    <li>
-                      Omnichannel included
-                    </li>
-                    <li>
-                      Voice AI agent
-                    </li>
-                    <li>
-                      Custom integrations
-                    </li>
-                    <li>
-                      Dedicated account manager
-                    </li>
+                    <li>Up to 10,000 conversations</li>
+                    <li>Omnichannel included</li>
+                    <li>Voice AI agent</li>
+                    <li>Custom integrations</li>
+                    <li>Dedicated account manager</li>
                   </ul>
                   <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer">
                     <button className="btn-sarvam-secondary pc-btn">
                       <span className="btn-gradient-overlay-light" />
                       <span className="btn-label">
                         Get Started
+                      </span>
+                    </button>
+                  </a>
+                </div>
+                <div className="pricing-card-sarvam" data-section-reveal>
+                  <div className="pc-card-head">
+                    <div>
+                      <h3 className="pc-name">
+                        Enterprise
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="pc-price">
+                    Custom
+                  </div>
+                  <p className="pc-yearly" style={{
+                    marginBottom: "24px"
+                  }}>
+                    Tailored pricing for high-volume teams, custom SLAs, and security reviews.
+                  </p>
+                  <ul className="pc-features">
+                    <li>Dedicated solutions architect</li>
+                    <li>Custom SLAs and onboarding</li>
+                    <li>Advanced security review</li>
+                    <li>Custom integrations</li>
+                    <li>Priority implementation support</li>
+                  </ul>
+                  <a href="#cta">
+                    <button className="btn-sarvam-secondary pc-btn">
+                      <span className="btn-gradient-overlay-light" />
+                      <span className="btn-label">
+                        Talk to Sales
                       </span>
                     </button>
                   </a>
@@ -1016,7 +1080,7 @@ export default function HomeMarkup() {
                     </svg>
                   </span>
                 </div>
-                <div className="faq-q" data-answer="Plans start at ₹2,200/mo for 500 conversations. Growth at ₹8,000/mo includes omnichannel. Pro at ₹13,999/mo gives you unlimited conversations, Voice AI, and a dedicated account manager. All plans include unlimited dashboard users.">
+                <div className="faq-q" data-answer="Plans start at ₹2,499/mo for 500 conversations. Growth at ₹7,999/mo includes omnichannel. Pro at ₹14,999/mo gives you unlimited conversations, Voice AI, and a dedicated account manager. All plans include unlimited dashboard users.">
                   <span className="faq-q-text">
                     What does it cost?
                   </span>
