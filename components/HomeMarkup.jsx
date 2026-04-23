@@ -562,27 +562,29 @@ export default function HomeMarkup() {
                   growing businesses.
                 </h2>
               </div>
+              <input className="pricing-billing-input" type="radio" name="pricing-billing" id="pricing-billing-monthly" defaultChecked />
+              <input className="pricing-billing-input" type="radio" name="pricing-billing" id="pricing-billing-yearly" />
+              <div className="pricing-switcher">
+                <div className="pricing-toggle" role="tablist" aria-label="Billing cycle">
+                  <label className="pricing-toggle-option" htmlFor="pricing-billing-monthly">
+                    Monthly
+                  </label>
+                  <label className="pricing-toggle-option" htmlFor="pricing-billing-yearly">
+                    Yearly
+                  </label>
+                </div>
+              </div>
               <div className="pricing-row">
                 <div className="pricing-card-sarvam" data-section-reveal>
-                  <input className="pc-billing-input" type="radio" name="core-billing" id="core-billing-monthly" defaultChecked />
-                  <input className="pc-billing-input" type="radio" name="core-billing" id="core-billing-yearly" />
                   <div className="pc-card-head">
                     <div>
-                      <h3 className="pc-name">
-                        Core
-                      </h3>
-                    </div>
-                    <div className="pc-billing">
-                      <div className="pc-billing-toggle" role="tablist" aria-label="Core billing cycle">
-                        <label className="pc-billing-option" htmlFor="core-billing-monthly">
-                          Monthly
-                        </label>
-                        <label className="pc-billing-option" htmlFor="core-billing-yearly">
-                          Yearly
-                          <span className="pc-billing-save">
-                            Save ₹5,988/year
-                          </span>
-                        </label>
+                      <div className="pc-title-row">
+                        <h3 className="pc-name">
+                          Core
+                        </h3>
+                        <span className="pc-plan-save">
+                          Save ₹5,988/year
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -593,19 +595,19 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹2,000
+                    ₹24,000
                     <span className="pc-per">
                       /year
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹2,000/year
+                    or ₹24,000/year
                     <span className="pc-savings">
                       Save ₹5,988/year
                     </span>
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
-                    or ₹2,499/mo
+                    or ₹2,499/mo if billed monthly
                   </p>
                   <ul className="pc-features">
                     <li>Up to 500 conversations</li>
@@ -624,28 +626,18 @@ export default function HomeMarkup() {
                   </a>
                 </div>
                 <div className="pricing-card-sarvam featured" data-section-reveal>
-                  <input className="pc-billing-input" type="radio" name="growth-billing" id="growth-billing-monthly" defaultChecked />
-                  <input className="pc-billing-input" type="radio" name="growth-billing" id="growth-billing-yearly" />
                   <div className="pc-card-head">
                     <div>
                       <div className="pc-popular">
                         Most Popular
                       </div>
-                      <h3 className="pc-name">
-                        Growth
-                      </h3>
-                    </div>
-                    <div className="pc-billing">
-                      <div className="pc-billing-toggle" role="tablist" aria-label="Growth billing cycle">
-                        <label className="pc-billing-option" htmlFor="growth-billing-monthly">
-                          Monthly
-                        </label>
-                        <label className="pc-billing-option" htmlFor="growth-billing-yearly">
-                          Yearly
-                          <span className="pc-billing-save">
-                            Save ₹23,988/year
-                          </span>
-                        </label>
+                      <div className="pc-title-row">
+                        <h3 className="pc-name">
+                          Growth
+                        </h3>
+                        <span className="pc-plan-save">
+                          Save ₹23,988/year
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -656,19 +648,19 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹6,000
+                    ₹72,000
                     <span className="pc-per">
                       /year
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹6,000/year
+                    or ₹72,000/year
                     <span className="pc-savings">
                       Save ₹23,988/year
                     </span>
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
-                    or ₹7,999/mo
+                    or ₹7,999/mo if billed monthly
                   </p>
                   <ul className="pc-features">
                     <li>Up to 3,000 conversations</li>
@@ -687,25 +679,15 @@ export default function HomeMarkup() {
                   </a>
                 </div>
                 <div className="pricing-card-sarvam" data-section-reveal>
-                  <input className="pc-billing-input" type="radio" name="pro-billing" id="pro-billing-monthly" defaultChecked />
-                  <input className="pc-billing-input" type="radio" name="pro-billing" id="pro-billing-yearly" />
                   <div className="pc-card-head">
                     <div>
-                      <h3 className="pc-name">
-                        Pro
-                      </h3>
-                    </div>
-                    <div className="pc-billing">
-                      <div className="pc-billing-toggle" role="tablist" aria-label="Pro billing cycle">
-                        <label className="pc-billing-option" htmlFor="pro-billing-monthly">
-                          Monthly
-                        </label>
-                        <label className="pc-billing-option" htmlFor="pro-billing-yearly">
-                          Yearly
-                          <span className="pc-billing-save">
-                            Save ₹53,988/year
-                          </span>
-                        </label>
+                      <div className="pc-title-row">
+                        <h3 className="pc-name">
+                          Pro
+                        </h3>
+                        <span className="pc-plan-save">
+                          Save ₹53,988/year
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -716,19 +698,19 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹10,500
+                    ₹126,000
                     <span className="pc-per">
                       /year
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹10,500/year
+                    or ₹126,000/year
                     <span className="pc-savings">
                       Save ₹53,988/year
                     </span>
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
-                    or ₹14,999/mo
+                    or ₹14,999/mo if billed monthly
                   </p>
                   <ul className="pc-features">
                     <li>Up to 10,000 conversations</li>

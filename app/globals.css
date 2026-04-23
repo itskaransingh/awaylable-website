@@ -1606,29 +1606,17 @@ body {
   gap:42px;
 }
 .pricing-card-sarvam.featured .pc-card-head > div:first-child {
-  padding-right:40px;
+  padding-right:0;
 }
-.pc-card-head {
+.pricing-switcher {
   display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:28px;
-  margin-bottom:14px;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:36px;
 }
-.pc-card-head > div:first-child {
-  flex:1 1 auto;
-  min-width:0;
-  padding-right:24px;
-}
-.pc-billing {
-  flex:0 0 auto;
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-end;
-  margin-left:auto;
-  padding-top:16px;
-}
-.pc-billing-input {
+.pricing-billing-input {
   position:absolute;
   width:1px;
   height:1px;
@@ -1639,31 +1627,31 @@ body {
   white-space:nowrap;
   border:0;
 }
-.pc-billing-toggle {
+.pricing-toggle {
   display:inline-flex;
   align-items:center;
-  gap:3px;
+  gap:4px;
   padding:4px;
   border-radius:9999px;
   border:1px solid rgba(10,33,86,0.08);
   background:rgba(10,33,86,0.04);
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.7);
   width:auto;
-  max-width:clamp(154px, 18vw, 198px);
+  max-width:min(100%, 276px);
   flex-wrap:nowrap;
   position:relative;
   overflow:visible;
 }
-.pc-billing-option {
+.pricing-toggle-option {
   display:inline-flex;
   position:relative;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   gap:0;
-  padding:8px 11px;
+  padding:10px 14px;
   border-radius:9999px;
-  font-size:11px;
+  font-size:12px;
   font-weight:600;
   color:var(--color-tx-secondary);
   cursor:pointer;
@@ -1672,13 +1660,23 @@ body {
   white-space:nowrap;
   text-align:center;
 }
-.pc-billing-option:hover { color:var(--color-tx); }
-.pc-billing-save {
-  display:block;
-  position:absolute;
-  left:50%;
-  top:-24px;
-  transform:translateX(-50%) scale(0.98);
+.pricing-toggle-option:hover { color:var(--color-tx); }
+.pc-card-head {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:14px;
+}
+.pc-card-head > div:first-child {
+  flex:1 1 auto;
+  min-width:0;
+  padding-right:0;
+}
+.pc-plan-save {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:3px 8px;
   border-radius:9999px;
   background:rgba(19,136,8,0.1);
@@ -1690,6 +1688,7 @@ body {
   overflow:hidden;
   max-width:140px;
   opacity:0;
+  transform:translateY(4px);
   pointer-events:none;
   transition:opacity 0.25s ease, transform 0.25s ease, max-width 0.25s ease;
 }
@@ -1699,6 +1698,12 @@ body {
   border-radius:9999px; font-size:11px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
 }
 .pc-name { font-family:var(--font-season); font-size:24px; margin-bottom:4px; }
+.pc-title-row {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
 .pc-price {
   font-family:var(--font-season);
   font-size:40px;
@@ -1731,58 +1736,34 @@ body {
 .pc-btn { width:100%; justify-content:center; }
 .pricing-footnote { text-align:center; margin-top:24px; font-size:14px; color:var(--color-tx-secondary); font-weight:500; }
 
-#core-billing-monthly:checked ~ .pc-card-head .pc-billing-option[for="core-billing-monthly"],
-#core-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="core-billing-yearly"],
-#growth-billing-monthly:checked ~ .pc-card-head .pc-billing-option[for="growth-billing-monthly"],
-#growth-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="growth-billing-yearly"],
-#pro-billing-monthly:checked ~ .pc-card-head .pc-billing-option[for="pro-billing-monthly"],
-#pro-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="pro-billing-yearly"] {
+#pricing-billing-monthly:checked ~ .pricing-switcher .pricing-toggle .pricing-toggle-option[for="pricing-billing-monthly"],
+#pricing-billing-yearly:checked ~ .pricing-switcher .pricing-toggle .pricing-toggle-option[for="pricing-billing-yearly"] {
   background:white;
   color:var(--color-tx);
   box-shadow:0 4px 16px rgba(0,0,0,0.08);
 }
-#core-billing-yearly:checked ~ .pc-card-head .pc-billing-save,
-#growth-billing-yearly:checked ~ .pc-card-head .pc-billing-save,
-#pro-billing-yearly:checked ~ .pc-card-head .pc-billing-save {
+#pricing-billing-yearly:checked ~ .pricing-row .pc-plan-save {
   opacity:1;
-  transform:translateX(-50%) scale(1);
+  transform:translateY(0);
   max-width:140px;
 }
-#core-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="core-billing-yearly"],
-#growth-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="growth-billing-yearly"],
-#pro-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="pro-billing-yearly"] {
-  transform:none;
-}
-#core-billing-monthly:checked ~ .pc-price-monthly,
-#core-billing-monthly:checked ~ .pc-yearly-monthly,
-#growth-billing-monthly:checked ~ .pc-price-monthly,
-#growth-billing-monthly:checked ~ .pc-yearly-monthly,
-#pro-billing-monthly:checked ~ .pc-price-monthly,
-#pro-billing-monthly:checked ~ .pc-yearly-monthly {
+#pricing-billing-monthly:checked ~ .pricing-row .pc-price-monthly,
+#pricing-billing-monthly:checked ~ .pricing-row .pc-yearly-monthly {
   display:block;
 }
-#core-billing-yearly:checked ~ .pc-price-yearly,
-#core-billing-yearly:checked ~ .pc-yearly-yearly,
-#growth-billing-yearly:checked ~ .pc-price-yearly,
-#growth-billing-yearly:checked ~ .pc-yearly-yearly,
-#pro-billing-yearly:checked ~ .pc-price-yearly,
-#pro-billing-yearly:checked ~ .pc-yearly-yearly {
+#pricing-billing-yearly:checked ~ .pricing-row .pc-price-yearly,
+#pricing-billing-yearly:checked ~ .pricing-row .pc-yearly-yearly {
   display:block;
 }
-#core-billing-yearly:checked ~ .pc-price-monthly,
-#core-billing-yearly:checked ~ .pc-yearly-monthly,
-#growth-billing-yearly:checked ~ .pc-price-monthly,
-#growth-billing-yearly:checked ~ .pc-yearly-monthly,
-#pro-billing-yearly:checked ~ .pc-price-monthly,
-#pro-billing-yearly:checked ~ .pc-yearly-monthly {
+#pricing-billing-yearly:checked ~ .pricing-row .pc-price-monthly,
+#pricing-billing-yearly:checked ~ .pricing-row .pc-yearly-monthly {
   display:none;
 }
-#core-billing-monthly:checked ~ .pc-price-yearly,
-#core-billing-monthly:checked ~ .pc-yearly-yearly,
-#growth-billing-monthly:checked ~ .pc-price-yearly,
-#growth-billing-monthly:checked ~ .pc-yearly-yearly,
-#pro-billing-monthly:checked ~ .pc-price-yearly,
-#pro-billing-monthly:checked ~ .pc-yearly-yearly {
+#pricing-billing-monthly:checked ~ .pricing-row .pc-price-yearly,
+#pricing-billing-monthly:checked ~ .pricing-row .pc-yearly-yearly {
+  display:none;
+}
+#pricing-billing-monthly:checked ~ .pricing-row .pc-plan-save {
   display:none;
 }
 
@@ -1865,18 +1846,17 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .pricing-switcher { gap:14px; margin-bottom:28px; }
+  .pricing-toggle { gap:2px; padding:3px; max-width:100%; }
+  .pricing-toggle-option { padding:8px 10px; font-size:10px; }
   .pc-card-head { gap:14px; margin-bottom:12px; }
-  .pc-card-head > div:first-child { padding-right:10px; }
+  .pc-card-head > div:first-child { padding-right:0; }
   .pricing-card-sarvam.featured .pc-card-head {
     gap:24px;
   }
   .pricing-card-sarvam.featured .pc-card-head > div:first-child {
-    padding-right:18px;
+    padding-right:0;
   }
-  .pc-billing { padding-top:12px; }
-  .pc-billing-toggle { gap:2px; padding:3px; max-width:100%; }
-  .pc-billing-option { padding:7px 10px; font-size:10px; }
-  .pc-billing-save { font-size:9px; max-width:120px; top:-20px; }
   .pricing-row { gap:16px; }
   .pricing-card-sarvam { padding:28px 20px; }
   .pc-name { font-size:20px; }
