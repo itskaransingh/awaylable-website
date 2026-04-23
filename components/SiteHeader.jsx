@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import NavMoreMenu from "@/components/NavMoreMenu";
 
 export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-studies" }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const href = (id) => `${anchorBase}#${id}`;
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <header className="header">
@@ -25,14 +31,15 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <Link href={href("channels")} className="nav-link">
                   <span>Channels</span>
                 </Link>
-                <details className="nav-more">
-                  <summary className="nav-link nav-more-trigger">
-                    <span>More</span>
-                    <span className="nav-chevron" aria-hidden="true">
-                      ▾
-                    </span>
-                  </summary>
-                </details>
+                <div className="nav-more">
+                  <NavMoreMenu
+                    items={[
+                      { href: href("features"), label: "Platform" },
+                      { href: href("use-cases"), label: "Use Cases" },
+                      { href: href("pricing"), label: "Pricing" },
+                    ]}
+                  />
+                </div>
               </div>
               <div className="nav-ctas">
                 <Link href={href("cta")} className="btn-sarvam-primary">
@@ -54,22 +61,33 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                   <span className="logo-dot">.</span>
                 </span>
               </Link>
-              <button className="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+              <button
+                className={`hamburger${isMobileMenuOpen ? " active" : ""}`}
+                type="button"
+                aria-label="Toggle menu"
+                aria-controls="mobileMenu"
+                aria-expanded={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen((open) => !open)}
+              >
                 <span />
                 <span />
                 <span />
               </button>
             </div>
-            <div className="mobile-menu" id="mobileMenu">
-              <Link href={caseStudiesHref}>Case Studies</Link>
-              <Link href="/partners">Partners</Link>
-              <Link href={href("channels")}>Channels</Link>
-              <Link href={href("features")}>Platform</Link>
-              <Link href={href("use-cases")}>Use Cases</Link>
-              <Link href={href("pricing")}>Pricing</Link>
+            <div
+              className={`mobile-menu${isMobileMenuOpen ? " active" : ""}`}
+              id="mobileMenu"
+            >
+              <Link href={caseStudiesHref} onClick={closeMobileMenu}>Case Studies</Link>
+              <Link href="/partners" onClick={closeMobileMenu}>Partners</Link>
+              <Link href={href("channels")} onClick={closeMobileMenu}>Channels</Link>
+              <Link href={href("features")} onClick={closeMobileMenu}>Platform</Link>
+              <Link href={href("use-cases")} onClick={closeMobileMenu}>Use Cases</Link>
+              <Link href={href("pricing")} onClick={closeMobileMenu}>Pricing</Link>
               <Link
                 href={href("cta")}
                 className="btn-sarvam-primary"
+                onClick={closeMobileMenu}
                 style={{
                   textAlign: "center",
                   marginTop: "12px",
@@ -79,17 +97,6 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 <span className="btn-label">Experience Awaylable</span>
               </Link>
             </div>
-          </div>
-          <div className="nav-more-panel">
-            <Link href={href("features")} className="nav-more-item">
-              Platform
-            </Link>
-            <Link href={href("use-cases")} className="nav-more-item">
-              Use Cases
-            </Link>
-            <Link href={href("pricing")} className="nav-more-item">
-              Pricing
-            </Link>
           </div>
         </div>
       </div>
