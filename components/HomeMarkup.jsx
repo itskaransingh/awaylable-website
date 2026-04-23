@@ -105,7 +105,7 @@ export default function HomeMarkup() {
               <div className="three-pillars">
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="/images/samvaad-motif-01.svg" alt="" className="pillar-motif" />
+                    <img src="/11.png" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Unified by design
@@ -116,7 +116,7 @@ export default function HomeMarkup() {
                 </div>
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="/images/samvaad-motif-02.svg" alt="" className="pillar-motif" />
+                    <img src="/10.png" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Zero-setup intelligence
@@ -127,7 +127,7 @@ export default function HomeMarkup() {
                 </div>
                 <div className="pillar-item" data-section-reveal>
                   <div className="pillar-motif-wrap">
-                    <img src="/images/samvaad-motif-03.svg" alt="" className="pillar-motif" />
+                    <img src="/12.png" alt="" className="pillar-motif" />
                   </div>
                   <h3 className="pillar-title">
                     Human at the core
