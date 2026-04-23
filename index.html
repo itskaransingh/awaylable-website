@@ -397,46 +397,106 @@
             <p class="section-eyebrow">Pricing</p>
             <h2 class="section-h2">Transparent pricing for<br>growing businesses.</h2>
           </div>
-          <div class="pricing-row">
-            <div class="pricing-card-sarvam" data-section-reveal>
-              <h3 class="pc-name">Core</h3>
-              <div class="pc-price">&#8377;2,499<span class="pc-per">/mo</span></div>
-              <p class="pc-yearly">or &#8377;2,000/mo billed yearly <span class="pc-savings">Save &#8377;5,988/year</span></p>
-              <ul class="pc-features">
-                <li>Up to 500 conversations</li>
-                <li>Website widget included</li>
-                <li>Knowledge base auto-ingestion</li>
-                <li>Human escalation</li>
-                <li>Omnichannel as &#8377;1,000/mo add-on</li>
-              </ul>
-              <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer"><button class="btn-sarvam-secondary pc-btn"><span class="btn-gradient-overlay-light"></span><span class="btn-label">Get Started</span></button></a>
-            </div>
-            <div class="pricing-card-sarvam featured" data-section-reveal>
-              <div class="pc-popular">Most Popular</div>
-              <h3 class="pc-name">Growth</h3>
-              <div class="pc-price">&#8377;7,999<span class="pc-per">/mo</span></div>
-              <p class="pc-yearly">or &#8377;6,000/mo billed yearly <span class="pc-savings">Save &#8377;23,988/year</span></p>
-              <ul class="pc-features">
-                <li>Up to 3,000 conversations</li>
-                <li>Omnichannel included</li>
-                <li>Advanced lead capture</li>
-                <li>KPI & KG Engine analytics</li>
-                <li>Priority support</li>
-              </ul>
-              <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer"><button class="btn-sarvam-primary pc-btn"><span class="btn-gradient-overlay"></span><span class="btn-label">Get Started</span></button></a>
-            </div>
-            <div class="pricing-card-sarvam" data-section-reveal>
-              <h3 class="pc-name">Pro</h3>
-              <div class="pc-price">&#8377;14,999<span class="pc-per">/mo</span></div>
-              <p class="pc-yearly">or &#8377;10,500/mo billed yearly <span class="pc-savings">Save &#8377;53,988/year</span></p>
-              <ul class="pc-features">
-                <li>Unlimited conversations</li>
-                <li>Omnichannel included</li>
-                <li>Voice AI agent</li>
-                <li>Custom integrations</li>
-                <li>Dedicated account manager</li>
-              </ul>
-              <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer"><button class="btn-sarvam-secondary pc-btn"><span class="btn-gradient-overlay-light"></span><span class="btn-label">Get Started</span></button></a>
+            <div class="pricing-row">
+              <div class="pricing-card-sarvam" data-section-reveal>
+                <input class="pc-billing-input" type="radio" name="core-billing" id="core-billing-monthly" checked>
+                <input class="pc-billing-input" type="radio" name="core-billing" id="core-billing-yearly">
+                <div class="pc-card-head">
+                  <div>
+                    <h3 class="pc-name">Core</h3>
+                  </div>
+                  <div class="pc-billing">
+                    <div class="pc-billing-toggle" role="tablist" aria-label="Core billing cycle">
+                      <label class="pc-billing-option" for="core-billing-monthly">Monthly</label>
+                      <label class="pc-billing-option" for="core-billing-yearly">Yearly<span class="pc-billing-save">Save ₹5,988/year</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="pc-price pc-price-monthly">&#8377;2,499<span class="pc-per">/mo</span></div>
+                <div class="pc-price pc-price-yearly">&#8377;2,000<span class="pc-per">/year</span></div>
+                <p class="pc-yearly pc-yearly-monthly">or &#8377;2,000/year <span class="pc-savings">Save &#8377;5,988/year</span></p>
+                <p class="pc-yearly pc-yearly-yearly">or &#8377;2,499/mo</p>
+                <ul class="pc-features">
+                  <li>Up to 500 conversations</li>
+                  <li>Website widget included</li>
+                  <li>Knowledge base auto-ingestion</li>
+                  <li>Human escalation</li>
+                  <li>Omnichannel as &#8377;1,000/mo add-on</li>
+                </ul>
+                <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer"><button class="btn-sarvam-secondary pc-btn"><span class="btn-gradient-overlay-light"></span><span class="btn-label">Get Started</span></button></a>
+              </div>
+              <div class="pricing-card-sarvam featured" data-section-reveal>
+                <input class="pc-billing-input" type="radio" name="growth-billing" id="growth-billing-monthly" checked>
+                <input class="pc-billing-input" type="radio" name="growth-billing" id="growth-billing-yearly">
+                <div class="pc-card-head">
+                  <div>
+                    <div class="pc-popular">Most Popular</div>
+                    <h3 class="pc-name">Growth</h3>
+                  </div>
+                  <div class="pc-billing">
+                    <div class="pc-billing-toggle" role="tablist" aria-label="Growth billing cycle">
+                      <label class="pc-billing-option" for="growth-billing-monthly">Monthly</label>
+                      <label class="pc-billing-option" for="growth-billing-yearly">Yearly<span class="pc-billing-save">Save ₹23,988/year</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="pc-price pc-price-monthly">&#8377;7,999<span class="pc-per">/mo</span></div>
+                <div class="pc-price pc-price-yearly">&#8377;6,000<span class="pc-per">/year</span></div>
+                <p class="pc-yearly pc-yearly-monthly">or &#8377;6,000/year <span class="pc-savings">Save &#8377;23,988/year</span></p>
+                <p class="pc-yearly pc-yearly-yearly">or &#8377;7,999/mo</p>
+                <ul class="pc-features">
+                  <li>Up to 3,000 conversations</li>
+                  <li>Omnichannel included</li>
+                  <li>Advanced lead capture</li>
+                  <li>KPI & KG Engine analytics</li>
+                  <li>Priority support</li>
+                </ul>
+                <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer"><button class="btn-sarvam-primary pc-btn"><span class="btn-gradient-overlay"></span><span class="btn-label">Get Started</span></button></a>
+              </div>
+              <div class="pricing-card-sarvam" data-section-reveal>
+                <input class="pc-billing-input" type="radio" name="pro-billing" id="pro-billing-monthly" checked>
+                <input class="pc-billing-input" type="radio" name="pro-billing" id="pro-billing-yearly">
+                <div class="pc-card-head">
+                  <div>
+                    <h3 class="pc-name">Pro</h3>
+                  </div>
+                  <div class="pc-billing">
+                    <div class="pc-billing-toggle" role="tablist" aria-label="Pro billing cycle">
+                      <label class="pc-billing-option" for="pro-billing-monthly">Monthly</label>
+                      <label class="pc-billing-option" for="pro-billing-yearly">Yearly<span class="pc-billing-save">Save ₹53,988/year</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="pc-price pc-price-monthly">&#8377;14,999<span class="pc-per">/mo</span></div>
+                <div class="pc-price pc-price-yearly">&#8377;10,500<span class="pc-per">/year</span></div>
+                <p class="pc-yearly pc-yearly-monthly">or &#8377;10,500/year <span class="pc-savings">Save &#8377;53,988/year</span></p>
+                <p class="pc-yearly pc-yearly-yearly">or &#8377;14,999/mo</p>
+                <ul class="pc-features">
+                  <li>10,000 conversations</li>
+                  <li>Omnichannel included</li>
+                  <li>Voice AI agent</li>
+                  <li>Custom integrations</li>
+                  <li>Dedicated account manager</li>
+                </ul>
+                <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer"><button class="btn-sarvam-secondary pc-btn"><span class="btn-gradient-overlay-light"></span><span class="btn-label">Get Started</span></button></a>
+              </div>
+              <div class="pricing-card-sarvam" data-section-reveal>
+                <div class="pc-card-head">
+                  <div>
+                    <h3 class="pc-name">Enterprise</h3>
+                  </div>
+                </div>
+                <div class="pc-price">Custom</div>
+                <p class="pc-yearly" style="margin-bottom:24px;">Tailored pricing for high-volume teams, custom SLAs, and security reviews.</p>
+                <ul class="pc-features">
+                  <li>Dedicated solutions architect</li>
+                  <li>Custom SLAs and onboarding</li>
+                  <li>Advanced security review</li>
+                  <li>Custom integrations</li>
+                  <li>Priority implementation support</li>
+                </ul>
+                <a href="#cta"><button class="btn-sarvam-secondary pc-btn"><span class="btn-gradient-overlay-light"></span><span class="btn-label">Talk to Sales</span></button></a>
+              </div>
             </div>
           </div>
           <p class="pricing-footnote">Unlimited Dashboard Users included on ALL plans.</p>

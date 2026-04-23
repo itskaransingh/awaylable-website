@@ -1590,6 +1590,203 @@ body {
 }
 
 /* =============================================
+   PRICING (Sarvam style)
+   ============================================= */
+.pricing-row { display:grid; grid-template-columns:1fr; gap:20px; }
+@media(min-width:768px) { .pricing-row { grid-template-columns:repeat(2,1fr); } }
+@media(min-width:1120px) { .pricing-row { grid-template-columns:repeat(4,1fr); } }
+.pricing-card-sarvam {
+  background:white; border-radius:20px; padding:40px 28px;
+  border:1px solid rgba(0,0,0,0.06); display:flex; flex-direction:column;
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.pricing-card-sarvam:hover { transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,0,0,0.08); }
+.pricing-card-sarvam.featured { border:2px solid var(--color-indigo-950); position:relative; }
+.pricing-card-sarvam.featured .pc-card-head {
+  gap:42px;
+}
+.pricing-card-sarvam.featured .pc-card-head > div:first-child {
+  padding-right:40px;
+}
+.pc-card-head {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:14px;
+}
+.pc-card-head > div:first-child {
+  flex:1 1 auto;
+  min-width:0;
+  padding-right:24px;
+}
+.pc-billing {
+  flex:0 0 auto;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+  margin-left:auto;
+  padding-top:16px;
+}
+.pc-billing-input {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0, 0, 0, 0);
+  white-space:nowrap;
+  border:0;
+}
+.pc-billing-toggle {
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  padding:4px;
+  border-radius:9999px;
+  border:1px solid rgba(10,33,86,0.08);
+  background:rgba(10,33,86,0.04);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7);
+  width:auto;
+  max-width:clamp(154px, 18vw, 198px);
+  flex-wrap:nowrap;
+  position:relative;
+  overflow:visible;
+}
+.pc-billing-option {
+  display:inline-flex;
+  position:relative;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+  padding:8px 11px;
+  border-radius:9999px;
+  font-size:11px;
+  font-weight:600;
+  color:var(--color-tx-secondary);
+  cursor:pointer;
+  user-select:none;
+  transition:background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  white-space:nowrap;
+  text-align:center;
+}
+.pc-billing-option:hover { color:var(--color-tx); }
+.pc-billing-save {
+  display:block;
+  position:absolute;
+  left:50%;
+  top:-24px;
+  transform:translateX(-50%) scale(0.98);
+  padding:3px 8px;
+  border-radius:9999px;
+  background:rgba(19,136,8,0.1);
+  color:#138808;
+  font-size:10px;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap;
+  overflow:hidden;
+  max-width:140px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.25s ease, transform 0.25s ease, max-width 0.25s ease;
+}
+.pc-popular {
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  background:var(--color-indigo-950); color:white; padding:4px 16px;
+  border-radius:9999px; font-size:11px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
+}
+.pc-name { font-family:var(--font-season); font-size:24px; margin-bottom:4px; }
+.pc-price {
+  font-family:var(--font-season);
+  font-size:40px;
+  font-weight:600;
+  margin-bottom:4px;
+  line-height:1;
+}
+.pc-price-yearly, .pc-yearly-yearly { display:none; }
+.pc-price-yearly {
+  font-size:40px;
+  margin-bottom:4px;
+  white-space:nowrap;
+}
+.pc-price-yearly .pc-per {
+  font-size:16px;
+  white-space:nowrap;
+}
+.pc-per { font-size:16px; font-weight:400; color:var(--color-tx-secondary); }
+.pc-yearly { font-size:13px; color:var(--color-tx-tertiary); margin-bottom:16px; line-height:1.35; }
+.pc-yearly-yearly { margin-bottom:14px; }
+.pc-savings { display:inline-block; background:rgba(19,136,8,0.1); color:#138808; font-size:11px; font-weight:600; padding:2px 8px; border-radius:9999px; margin-left:4px; white-space:nowrap; }
+.pc-features { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:32px; flex:1; }
+.pc-features li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--color-tx-secondary); }
+.pc-features li::before {
+  content:''; width:20px; height:20px; border-radius:50%; flex-shrink:0;
+  background:rgba(19,136,8,0.1);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23138808'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size:14px; background-repeat:no-repeat; background-position:center; margin-top:1px;
+}
+.pc-btn { width:100%; justify-content:center; }
+.pricing-footnote { text-align:center; margin-top:24px; font-size:14px; color:var(--color-tx-secondary); font-weight:500; }
+
+#core-billing-monthly:checked ~ .pc-card-head .pc-billing-option[for="core-billing-monthly"],
+#core-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="core-billing-yearly"],
+#growth-billing-monthly:checked ~ .pc-card-head .pc-billing-option[for="growth-billing-monthly"],
+#growth-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="growth-billing-yearly"],
+#pro-billing-monthly:checked ~ .pc-card-head .pc-billing-option[for="pro-billing-monthly"],
+#pro-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="pro-billing-yearly"] {
+  background:white;
+  color:var(--color-tx);
+  box-shadow:0 4px 16px rgba(0,0,0,0.08);
+}
+#core-billing-yearly:checked ~ .pc-card-head .pc-billing-save,
+#growth-billing-yearly:checked ~ .pc-card-head .pc-billing-save,
+#pro-billing-yearly:checked ~ .pc-card-head .pc-billing-save {
+  opacity:1;
+  transform:translateX(-50%) scale(1);
+  max-width:140px;
+}
+#core-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="core-billing-yearly"],
+#growth-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="growth-billing-yearly"],
+#pro-billing-yearly:checked ~ .pc-card-head .pc-billing-option[for="pro-billing-yearly"] {
+  transform:none;
+}
+#core-billing-monthly:checked ~ .pc-price-monthly,
+#core-billing-monthly:checked ~ .pc-yearly-monthly,
+#growth-billing-monthly:checked ~ .pc-price-monthly,
+#growth-billing-monthly:checked ~ .pc-yearly-monthly,
+#pro-billing-monthly:checked ~ .pc-price-monthly,
+#pro-billing-monthly:checked ~ .pc-yearly-monthly {
+  display:block;
+}
+#core-billing-yearly:checked ~ .pc-price-yearly,
+#core-billing-yearly:checked ~ .pc-yearly-yearly,
+#growth-billing-yearly:checked ~ .pc-price-yearly,
+#growth-billing-yearly:checked ~ .pc-yearly-yearly,
+#pro-billing-yearly:checked ~ .pc-price-yearly,
+#pro-billing-yearly:checked ~ .pc-yearly-yearly {
+  display:block;
+}
+#core-billing-yearly:checked ~ .pc-price-monthly,
+#core-billing-yearly:checked ~ .pc-yearly-monthly,
+#growth-billing-yearly:checked ~ .pc-price-monthly,
+#growth-billing-yearly:checked ~ .pc-yearly-monthly,
+#pro-billing-yearly:checked ~ .pc-price-monthly,
+#pro-billing-yearly:checked ~ .pc-yearly-monthly {
+  display:none;
+}
+#core-billing-monthly:checked ~ .pc-price-yearly,
+#core-billing-monthly:checked ~ .pc-yearly-yearly,
+#growth-billing-monthly:checked ~ .pc-price-yearly,
+#growth-billing-monthly:checked ~ .pc-yearly-yearly,
+#pro-billing-monthly:checked ~ .pc-price-yearly,
+#pro-billing-monthly:checked ~ .pc-yearly-yearly {
+  display:none;
+}
+
+/* =============================================
    RESPONSIVE OVERRIDES
    ============================================= */
 .hero-section {
@@ -1605,7 +1802,7 @@ body {
 .demo-window,
 .deploy-grid > *,
 .advantage-row > *,
-.pricing-row > *,
+  .pricing-row > *,
 .blog-grid > *,
 .uc-panel-grid > *,
 .case-study-grid > *,
@@ -1667,6 +1864,25 @@ body {
   .advantage-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .pc-card-head { gap:14px; margin-bottom:12px; }
+  .pc-card-head > div:first-child { padding-right:10px; }
+  .pricing-card-sarvam.featured .pc-card-head {
+    gap:24px;
+  }
+  .pricing-card-sarvam.featured .pc-card-head > div:first-child {
+    padding-right:18px;
+  }
+  .pc-billing { padding-top:12px; }
+  .pc-billing-toggle { gap:2px; padding:3px; max-width:100%; }
+  .pc-billing-option { padding:7px 10px; font-size:10px; }
+  .pc-billing-save { font-size:9px; max-width:120px; top:-20px; }
+  .pricing-row { gap:16px; }
+  .pricing-card-sarvam { padding:28px 20px; }
+  .pc-name { font-size:20px; }
+  .pc-price { font-size:32px; }
+  .pc-price-yearly { font-size:32px; }
+  .pc-features li { font-size:13px; }
 
   .cta-white-btn,
   .cta-outline-btn {
