@@ -569,8 +569,13 @@ export default function HomeMarkup() {
                   <label className="pricing-toggle-option" htmlFor="pricing-billing-monthly">
                     Monthly
                   </label>
-                  <label className="pricing-toggle-option" htmlFor="pricing-billing-yearly">
-                    Yearly
+                  <label className="pricing-toggle-option pricing-toggle-option-yearly" htmlFor="pricing-billing-yearly">
+                    <span className="pricing-toggle-option-label">
+                      Yearly
+                    </span>
+                    <span className="pricing-toggle-save">
+                      Save upto ₹53,988/year
+                    </span>
                   </label>
                 </div>
               </div>
@@ -595,16 +600,13 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹2,000
+                    ₹1,999
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹2000/mo for annual plan
-                    <span className="pc-savings">
-                      Save ₹5,988/year
-                    </span>
+                    or ₹1,999/mo for annual plan
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
                     or ₹2,499/mo if billed monthly
@@ -648,16 +650,13 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹6,000
+                    ₹5,999
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹6,000/mo for annual plan
-                    <span className="pc-savings">
-                      Save ₹23,988/year
-                    </span>
+                    or ₹5,999/mo for annual plan
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
                     or ₹7,999/mo if billed monthly
@@ -698,16 +697,13 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹10,500
+                    ₹10,499
                     <span className="pc-per">
                       /mo
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹10,500/mo for annual plan
-                    <span className="pc-savings">
-                      Save ₹53,988/year
-                    </span>
+                    or ₹10,499/mo for annual plan
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
                     or ₹14,999/mo if billed monthly
