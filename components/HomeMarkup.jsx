@@ -595,13 +595,13 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹24,000
+                    ₹2,000
                     <span className="pc-per">
-                      /year
+                      /mo
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹24,000/year
+                    or ₹2000/mo for annual plan
                     <span className="pc-savings">
                       Save ₹5,988/year
                     </span>
@@ -648,13 +648,13 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹72,000
+                    ₹6,000
                     <span className="pc-per">
-                      /year
+                      /mo
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹72,000/year
+                    or ₹6,000/mo for annual plan
                     <span className="pc-savings">
                       Save ₹23,988/year
                     </span>
@@ -698,13 +698,13 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <div className="pc-price pc-price-yearly">
-                    ₹126,000
+                    ₹10,500
                     <span className="pc-per">
-                      /year
+                      /mo
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹126,000/year
+                    or ₹10,500/mo for annual plan
                     <span className="pc-savings">
                       Save ₹53,988/year
                     </span>
