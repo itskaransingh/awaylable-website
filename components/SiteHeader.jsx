@@ -22,9 +22,9 @@ export default function SiteHeader({ anchorBase = "", caseStudiesHref = "/case-s
                 </span>
               </Link>
               <div className="nav-links">
-                <Link href={caseStudiesHref} className="nav-link">
+                {/* <Link href={caseStudiesHref} className="nav-link">
                   <span>Case Studies</span>
-                </Link>
+                </Link> */}
                 <Link href="/partners" className="nav-link">
                   <span>Partners</span>
                 </Link>
