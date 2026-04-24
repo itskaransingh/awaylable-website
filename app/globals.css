@@ -1826,10 +1826,7 @@ body {
     letter-spacing: 0;
   }
 
-  .hero-accent {
-    display: inline-block;
-    padding-left: 0!important;
-  }
+ 
 
   .btn-lg {
     width: 100%;

@@ -30,8 +30,8 @@ export default function HomeMarkup() {
                       <br />
                       we are
                       <span className="hero-accent" style={{
-                        paddingLeft: "12px"
-                      }}>
+                        paddingLeft: "9px"
+                      }} >
                         available.
                       </span>
                     </h1>
