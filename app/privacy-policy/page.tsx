@@ -79,6 +79,7 @@ export default function PrivacyPolicyPage() {
       <nav style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
         <a href="/about">About</a>
         <a href="/terms-of-service">Terms of Service</a>
+        <a href="/data-deletion">Data Deletion Policy</a>
         <Link href="/">Back to Home</Link>
       </nav>
     </main>

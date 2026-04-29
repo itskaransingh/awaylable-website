@@ -83,6 +83,7 @@ export default function TermsOfServicePage() {
       <nav style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
         <a href="/about">About</a>
         <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/data-deletion">Data Deletion Policy</a>
         <Link href="/">Back to Home</Link>
       </nav>
     </main>
