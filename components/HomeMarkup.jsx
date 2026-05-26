@@ -588,7 +588,7 @@ export default function HomeMarkup() {
                           Core
                         </h3>
                         <span className="pc-plan-save">
-                          Save ₹5,988/year
+                          Save ₹6,000/year
                         </span>
                       </div>
                     </div>
@@ -606,17 +606,19 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹1,999/mo for annual plan
+                    or ₹1,999/mo for annual plan (₹23,988/year · save ₹6,000)
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
                     or ₹2,499/mo if billed monthly
                   </p>
                   <ul className="pc-features">
-                    <li>Up to 500 conversations</li>
-                    <li>Website widget included</li>
-                    <li>Knowledge base auto-ingestion</li>
-                    <li>Human escalation</li>
-                    <li>Omnichannel as ₹1,000/mo add-on</li>
+                    <li>500 conversations / month</li>
+                    <li>200 pages of knowledge base*</li>
+                    <li>Website widget</li>
+                    <li>KB auto-ingestion (crawl, files & text)</li>
+                    <li>Human escalation · Lead capture</li>
+                    <li>Omnichannel add-on: +₹1,000/mo (WhatsApp + Instagram)</li>
+                    <li>Unlimited dashboard users</li>
                   </ul>
                   <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer">
                     <button className="btn-sarvam-secondary pc-btn">
@@ -638,7 +640,7 @@ export default function HomeMarkup() {
                           Growth
                         </h3>
                         <span className="pc-plan-save">
-                          Save ₹23,988/year
+                          Save ₹24,000/year
                         </span>
                       </div>
                     </div>
@@ -656,68 +658,20 @@ export default function HomeMarkup() {
                     </span>
                   </div>
                   <p className="pc-yearly pc-yearly-monthly">
-                    or ₹5,999/mo for annual plan
+                    or ₹5,999/mo for annual plan (₹71,988/year · save ₹24,000)
                   </p>
                   <p className="pc-yearly pc-yearly-yearly">
                     or ₹7,999/mo if billed monthly
                   </p>
                   <ul className="pc-features">
-                    <li>Up to 3,000 conversations</li>
-                    <li>Omnichannel included</li>
-                    <li>Advanced lead capture</li>
-                    <li>KPI & KG Engine analytics</li>
-                    <li>Priority support</li>
+                    <li>3,000 conversations / month</li>
+                    <li>500 pages of knowledge base*</li>
+                    <li>Omnichannel included (WhatsApp + Instagram)</li>
+                    <li>Unlimited dashboard users</li>
                   </ul>
                   <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer">
                     <button className="btn-sarvam-primary pc-btn">
                       <span className="btn-gradient-overlay" />
-                      <span className="btn-label">
-                        Get Started
-                      </span>
-                    </button>
-                  </a>
-                </div>
-                <div className="pricing-card-sarvam" data-section-reveal>
-                  <div className="pc-card-head">
-                    <div>
-                      <div className="pc-title-row">
-                        <h3 className="pc-name">
-                          Pro
-                        </h3>
-                        <span className="pc-plan-save">
-                          Save ₹53,988/year
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="pc-price pc-price-monthly">
-                    ₹14,999
-                    <span className="pc-per">
-                      /mo
-                    </span>
-                  </div>
-                  <div className="pc-price pc-price-yearly">
-                    ₹10,499
-                    <span className="pc-per">
-                      /mo
-                    </span>
-                  </div>
-                  <p className="pc-yearly pc-yearly-monthly">
-                    or ₹10,499/mo for annual plan
-                  </p>
-                  <p className="pc-yearly pc-yearly-yearly">
-                    or ₹14,999/mo if billed monthly
-                  </p>
-                  <ul className="pc-features">
-                    <li>Up to 10,000 conversations</li>
-                    <li>Omnichannel included</li>
-                    <li>Voice AI agent</li>
-                    <li>Custom integrations</li>
-                    <li>Dedicated account manager</li>
-                  </ul>
-                  <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=get-started" target="_blank" rel="noopener noreferrer">
-                    <button className="btn-sarvam-secondary pc-btn">
-                      <span className="btn-gradient-overlay-light" />
                       <span className="btn-label">
                         Get Started
                       </span>
@@ -738,13 +692,15 @@ export default function HomeMarkup() {
                   <p className="pc-yearly" style={{
                     marginBottom: "24px"
                   }}>
-                    Tailored pricing for high-volume teams, custom SLAs, and security reviews.
+                    Tailored pricing for high-volume teams.
                   </p>
                   <ul className="pc-features">
+                    <li>Voice AI agent</li>
+                    <li>Custom integrations</li>
+                    <li>Dedicated account manager</li>
                     <li>Dedicated solutions architect</li>
                     <li>Custom SLAs and onboarding</li>
                     <li>Advanced security review</li>
-                    <li>Custom integrations</li>
                     <li>Priority implementation support</li>
                   </ul>
                   <a href="#cta">
@@ -759,6 +715,9 @@ export default function HomeMarkup() {
               </div>
               <p className="pricing-footnote">
                 Unlimited Dashboard Users included on ALL plans.
+              </p>
+              <p className="pricing-footnote">
+                * 1 page = 1 URL, file, or text block up to 2,000 words. Longer content counts as additional pages.
               </p>
             </div>
           </section>
@@ -1080,7 +1039,7 @@ export default function HomeMarkup() {
                     </svg>
                   </span>
                 </div>
-                <div className="faq-q" data-answer="Plans start at ₹2,499/mo for 500 conversations. Growth at ₹7,999/mo includes omnichannel. Pro at ₹14,999/mo gives you unlimited conversations, Voice AI, and a dedicated account manager. All plans include unlimited dashboard users.">
+                <div className="faq-q" data-answer="Plans start at ₹2,499/mo for 500 conversations. Growth at ₹7,999/mo includes omnichannel. Enterprise pricing is custom for high-volume teams. All plans include unlimited dashboard users.">
                   <span className="faq-q-text">
                     What does it cost?
                   </span>
