@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
+import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import "../public/css/style.css";
 import "./globals.css";
 import { absoluteUrl, siteUrl } from "@/lib/seo";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-plus-jakarta-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${instrumentSerif.variable} ${plusJakartaSans.variable}`}>
       <head>
         <link
           rel="preload"
