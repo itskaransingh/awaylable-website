@@ -40,7 +40,7 @@ export default async function CaseStudiesPage() {
           </p>
         </div>
       ) : (
-        <ResourceAnimatedList className="case-studies-grid">
+        <ResourceAnimatedList>
           {caseStudies.map((caseStudy) => (
             <CaseStudyCard key={caseStudy._id} caseStudy={caseStudy} />
           ))}

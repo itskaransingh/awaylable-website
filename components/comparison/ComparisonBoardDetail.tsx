@@ -19,7 +19,7 @@ function CellValue({ row, side }: { row: ComparisonFeature; side: 'a' | 'b' }) {
   const textValue = side === 'a' ? row.competitorAValue : row.competitorBValue
   const isSupported = side === 'a' ? row.isFeatureA : row.isFeatureB
 
-  if (textValue) {
+  if (textValue) {  
     return (
       <span className={side === 'a' ? 'comparison-board__cell-text--a' : 'comparison-board__cell-text--b'}>
         {textValue}
@@ -64,7 +64,7 @@ function SectionHead({
 }) {
   return (
     <header
-      className={`comparison-board__section-head${centered ? ' comparison-board__section-head--center' : ''}`}
+      className="comparison-board__section-head"
     >
       {label && <p className="comparison-board__section-label">{label}</p>}
       <h2 id={id} className="comparison-board__section-title">
@@ -261,7 +261,7 @@ export default function ComparisonBoardDetail({ comparison }: ComparisonBoardDet
           </ol>
         </nav>
 
-        <header className="comparison-board__hero">
+        <header className="comparison-board__section">
           <p className="comparison-board__eyebrow">Comparison Board</p>
           <p className="comparison-board__matchup">
             {competitorA} vs {competitorB}
@@ -272,7 +272,7 @@ export default function ComparisonBoardDetail({ comparison }: ComparisonBoardDet
             <div className="comparison-board__meta">
               <time dateTime={publishedAt}>{formattedDate}</time>
               <ShareButton />
-            </div>
+            </div>  
           )}
         </header>
 
@@ -341,7 +341,7 @@ export default function ComparisonBoardDetail({ comparison }: ComparisonBoardDet
         {hasProsCons && (
           <section className="comparison-board__section" aria-labelledby="cb-pros">
             <div className="comparison-board__inner">
-              <div className="comparison-board__prose">
+              <div className="comparison-board__section-head">
                 <SectionHead id="cb-pros" label="Detailed comparison" title="Pros & cons" />
               </div>
               <div className="comparison-board__two-col">
@@ -367,13 +367,12 @@ export default function ComparisonBoardDetail({ comparison }: ComparisonBoardDet
         {hasUseCases && (
           <section className="comparison-board__section" aria-labelledby="cb-use-cases">
             <div className="comparison-board__inner">
-              <div className="comparison-board__prose">
                 <SectionHead
                   id="cb-use-cases"
                   label="Use cases"
                   title="Which option is right for me?"
                 />
-              </div>
+              
               <div className="comparison-board__two-col">
                 {prosA && prosA.length > 0 && (
                   <article className="comparison-board__card">

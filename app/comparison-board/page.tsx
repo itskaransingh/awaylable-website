@@ -40,7 +40,7 @@ export default async function ComparisonBoardPage() {
           </p>
         </div>
       ) : (
-        <ResourceAnimatedList className="comparisons-list">
+        <ResourceAnimatedList>
           {comparisonBoards.map((comparison) => (
             <ComparisonCard key={comparison._id} comparison={comparison} />
           ))}

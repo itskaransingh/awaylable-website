@@ -1,0 +1,552 @@
+/* Case study detail — editorial reading experience */
+
+.cs-detail {
+  --cs-fg: #0c0e14;
+  --cs-muted: #6b6f80;
+  --cs-border: #e8eaef;
+  --cs-card: #ffffff;
+  --cs-muted-bg: #f7f7f5;
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: #ffffff;
+  color: var(--cs-fg);
+  font-family: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Shell — matches comparison board margin pattern */
+.cs-detail__shell {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__shell {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cs-detail__shell {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Breadcrumbs */
+.cs-detail__breadcrumbs {
+  margin-bottom: 2.5rem;
+}
+
+.cs-detail__breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--cs-muted);
+}
+
+.cs-detail__breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cs-detail__breadcrumbs a:hover {
+  color: var(--cs-muted);
+}
+
+.cs-detail__breadcrumbs [aria-current='page'] {
+  color: var(--cs-fg);
+  font-weight: 500;
+}
+
+/* Hero — same width as reading column */
+.cs-detail__hero {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.5rem;
+}
+
+.cs-detail__title {
+  margin: 0 0 2rem;
+  font-family: var(--font-instrument);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--cs-fg);
+}
+
+@media (min-width: 768px) {
+  .cs-detail__title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cs-detail__title {
+    font-size: 3.5rem;
+  }
+}
+
+.cs-detail__hero-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--cs-muted-bg);
+}
+
+@media (min-width: 768px) {
+  .cs-detail__hero-image {
+    border-radius: 1.25rem;
+  }
+}
+
+/* Reading container — 800px optimized for long-form */
+.cs-detail__reading {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sections */
+.cs-detail__section {
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__section {
+    margin-bottom: 4rem;
+  }
+}
+
+.cs-detail__section-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+.cs-detail__heading {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-instrument);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--cs-fg);
+}
+
+@media (min-width: 768px) {
+  .cs-detail__heading {
+    font-size: 2rem;
+  }
+}
+
+/* Lead paragraph */
+.cs-detail__lead {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--cs-muted);
+}
+
+@media (min-width: 768px) {
+  .cs-detail__lead {
+    font-size: 1.25rem;
+  }
+}
+
+/* Contributors — understated, professional */
+.cs-detail__contributors {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--cs-border);
+  margin-bottom: 2.5rem;
+}
+
+.cs-detail__contributors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cs-detail__contributor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cs-detail__contributor-avatar {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: var(--cs-muted-bg);
+  flex-shrink: 0;
+}
+
+.cs-detail__contributor-avatar--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--cs-muted);
+}
+
+.cs-detail__contributor-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-detail__contributor-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cs-fg);
+}
+
+.cs-detail__contributor-role {
+  font-size: 0.75rem;
+  color: var(--cs-muted);
+}
+
+/* Prose — comfortable reading typography */
+.cs-detail__prose {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--cs-fg);
+}
+
+.cs-detail__prose > *:first-child {
+  margin-top: 0 !important;
+}
+
+.cs-detail__prose p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(12, 14, 20, 0.9);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__prose p {
+    font-size: 1.0625rem;
+  }
+}
+
+.cs-detail__prose p + p {
+  margin-top: 1.5rem;
+}
+
+.cs-detail__prose p + h1,
+.cs-detail__prose p + h2,
+.cs-detail__prose p + h3,
+.cs-detail__prose p + h4 {
+  margin-top: 3rem;
+}
+
+.cs-detail__prose h1 + p,
+.cs-detail__prose h2 + p,
+.cs-detail__prose h3 + p,
+.cs-detail__prose h4 + p {
+  margin-top: 1rem;
+}
+
+.cs-detail__prose h1,
+.cs-detail__prose h2 {
+  font-family: var(--font-instrument);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cs-fg);
+  margin: 3rem 0 1rem;
+  line-height: 1.2;
+}
+
+.cs-detail__prose h1 {
+  font-size: 1.75rem;
+}
+
+.cs-detail__prose h2 {
+  font-size: 1.5rem;
+}
+
+.cs-detail__prose h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 3rem 0 1rem;
+  line-height: 1.3;
+}
+
+.cs-detail__prose h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.35;
+}
+
+.cs-detail__prose ul,
+.cs-detail__prose ol {
+  margin: 1.5rem 0 0;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__prose ul,
+  .cs-detail__prose ol {
+    font-size: 1.0625rem;
+  }
+}
+
+.cs-detail__prose li + li {
+  margin-top: 0.75rem;
+}
+
+.cs-detail__prose blockquote {
+  font-family: var(--font-instrument);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--cs-fg);
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--cs-border);
+  background: var(--cs-muted-bg);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.cs-detail__prose .portable-image-container {
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.cs-detail__prose .portable-image-frame {
+  border-radius: 0.75rem;
+}
+
+/* Metrics — clean editorial grid */
+.cs-detail__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--cs-border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cs-detail__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.5rem;
+  background: var(--cs-card);
+}
+
+.cs-detail__metric-value {
+  font-family: var(--font-instrument);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cs-fg);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__metric-value {
+    font-size: 2rem;
+  }
+}
+
+.cs-detail__metric-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+/* Testimonial — subtle card with light background */
+.cs-detail__testimonial {
+  margin: 0;
+  padding: 2rem;
+  background: var(--cs-muted-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: 1rem;
+}
+
+.cs-detail__testimonial-quote {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-instrument);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--cs-fg);
+}
+
+@media (min-width: 768px) {
+  .cs-detail__testimonial-quote {
+    font-size: 1.5rem;
+  }
+}
+
+.cs-detail__testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cs-detail__testimonial-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid var(--cs-border);
+  background: var(--cs-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cs-detail__testimonial-logo--fallback {
+  font-weight: 700;
+  color: var(--cs-muted);
+}
+
+.cs-detail__testimonial-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-detail__testimonial-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cs-fg);
+}
+
+.cs-detail__testimonial-role {
+  font-size: 0.75rem;
+  color: var(--cs-muted);
+}
+
+/* CTA — minimal closing section */
+.cs-detail__cta-section {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 3rem 0;
+  border-top: 1px solid var(--cs-border);
+  border-bottom: 1px solid var(--cs-border);
+}
+
+.cs-detail__cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cs-detail__cta-text {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--cs-muted);
+}
+
+.cs-detail__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background: var(--cs-fg);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.cs-detail__cta-btn:hover {
+  background: #1a1d28;
+}
+
+/* Related — 3-col grid */
+.cs-detail__related {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 4rem;
+  border-top: 1px solid var(--cs-border);
+}
+
+.cs-detail__related-header {
+  margin-bottom: 2rem;
+}
+
+.cs-detail__related-title {
+  margin: 0;
+  font-family: var(--font-instrument);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--cs-fg);
+}
+
+@media (min-width: 768px) {
+  .cs-detail__related-title {
+    font-size: 2rem;
+  }
+}
+
+.cs-detail__related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cs-detail__related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cs-detail__related-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .cs-detail {
+    animation: none;
+    opacity: 1;
+  }
+}

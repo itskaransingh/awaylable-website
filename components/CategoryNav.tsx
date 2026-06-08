@@ -13,7 +13,7 @@ export default function CategoryNav() {
   ];
 
   return (
-    <nav className="category-nav-wrapper" aria-label="Resource categories">
+    <nav className="category-nav" aria-label="Resource categories">
       <div className="category-nav-inner">
         {categories.map((cat) => {
           const isActive = pathname === cat.href;
@@ -22,6 +22,7 @@ export default function CategoryNav() {
               key={cat.href}
               href={cat.href}
               className={`category-nav-link ${isActive ? 'active' : ''}`}
+              aria-current={isActive ? 'page' : undefined}
             >
               {cat.label}
             </Link>

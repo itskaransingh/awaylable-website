@@ -9,14 +9,14 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article }: ArticleCardProps) {
-  const { title, slug, description, featuredImage, publishedAt, tags } = article
+  const { title, slug, featuredImage, publishedAt, tags } = article
 
   const formattedDate = publishedAt
     ? format(new Date(publishedAt), 'MMMM d, yyyy')
     : ''
 
   const imageUrl = featuredImage
-    ? urlFor(featuredImage).width(600).height(400).url()
+    ? urlFor(featuredImage).width(600).height(380).url()
     : '/fallback-resource.jpg'
 
   const categoryTag = tags && tags.length > 0 ? tags[0].toUpperCase() : 'ARTICLE'
@@ -26,7 +26,6 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       <div className="article-card-body">
         <span className="article-card-tag">{categoryTag}</span>
         <h3 className="article-card-title">{title}</h3>
-        {description && <p className="article-card-excerpt">{description}</p>}
         {formattedDate && <time className="article-card-date" dateTime={publishedAt}>{formattedDate}</time>}
       </div>
       <div className="article-card-image-wrap">
@@ -34,7 +33,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           src={imageUrl}
           alt={title}
           width={600}
-          height={400}
+          height={380}
           className="article-card-image"
           loading="lazy"
         />
@@ -42,3 +41,4 @@ export default function ArticleCard({ article }: ArticleCardProps) {
     </Link>
   )
 }
+

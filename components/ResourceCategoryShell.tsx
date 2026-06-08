@@ -25,19 +25,18 @@ export default function ResourceCategoryShell({
       <SiteHeader />
 
       <main className="resources-theme resource-listing-page">
-        <ResourceContentContainer insetOnly>
-          <ResourcePageHeader title={heroTitle} description={heroDescription} />
-        </ResourceContentContainer>
-
-        <section className="resource-category-body" aria-label="Resource listings">
-          <ResourceContentContainer insetOnly>
+        <ResourceContentContainer>
+          <div className="resource-category-header">
+            <ResourcePageHeader title={heroTitle} description={heroDescription} />
             <CategoryNav />
-          </ResourceContentContainer>
+          </div>
 
-          <ResourceContentContainer>
-            <div className={`resource-grid-shell resource-grid-shell--${gridVariant}`}>{children}</div>
-          </ResourceContentContainer>
-        </section>
+          <section className="resource-category-body" aria-label="Resource listings">
+            <div className={`resource-grid-shell resource-grid-shell--${gridVariant}`}>
+              {children}
+            </div>
+          </section>
+        </ResourceContentContainer>
       </main>
 
       <SiteFooter />

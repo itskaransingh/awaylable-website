@@ -40,7 +40,7 @@ export default async function ArticlesPage() {
           </p>
         </div>
       ) : (
-        <ResourceAnimatedList className="articles-grid">
+        <ResourceAnimatedList>
           {articles.map((article) => (
             <ArticleCard key={article._id} article={article} />
           ))}

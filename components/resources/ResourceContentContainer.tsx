@@ -2,20 +2,19 @@ import { ReactNode } from 'react'
 
 interface ResourceContentContainerProps {
   children: ReactNode
-  /** Horizontal inset only — use for hero and category nav alignment */
-  insetOnly?: boolean
   className?: string
 }
 
+/**
+ * Single source of truth for resource category page width and horizontal inset.
+ * All listing pages share this container — do not add page-level padding.
+ */
 export default function ResourceContentContainer({
   children,
-  insetOnly = false,
   className = '',
 }: ResourceContentContainerProps) {
-  const modifier = insetOnly ? 'resource-content-container--inset-only' : ''
-
   return (
-    <div className={`resource-content-container ${modifier} ${className}`.trim()}>
+    <div className={`resource-content-container ${className}`.trim()}>
       {children}
     </div>
   )
