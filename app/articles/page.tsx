@@ -2,6 +2,7 @@ import { fetchAllArticles } from '@/lib/sanityFetch'
 import ArticleCard from '@/components/ArticleCard'
 import ResourceAnimatedList from '@/components/ResourceAnimatedList'
 import ResourceCategoryShell from '@/components/ResourceCategoryShell'
+import ComingSoon from '@/components/ComingSoon'
 
 export const revalidate = 60
 
@@ -33,12 +34,7 @@ export default async function ArticlesPage() {
       gridVariant="articles"
     >
       {articles.length === 0 ? (
-        <div className="resource-empty-state">
-          <h2 className="resource-empty-state-title">No Articles Found</h2>
-          <p className="resource-empty-state-text">
-            We couldn&apos;t find any articles at this time. Please check back later.
-          </p>
-        </div>
+        <ComingSoon />
       ) : (
         <ResourceAnimatedList>
           {articles.map((article) => (

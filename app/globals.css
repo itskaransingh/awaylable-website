@@ -2701,7 +2701,8 @@ body {
 /* Comparison card — vertical card, 1 per row, image inset at bottom */
 .comparison-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
   border-radius: 16px;
   overflow: hidden;
   background: #ffffff;
@@ -2721,11 +2722,14 @@ body {
 .comparison-card-body {
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 14px;
+  flex: 1;
+  padding: 10px 14px;
+  min-width: 0;
+  justify-content: center;
 }
 
 .comparison-card-meta {
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
 
 .comparison-card-competitors {
@@ -2744,21 +2748,25 @@ body {
 
 .comparison-card-title {
   font-family: var(--font-matter);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.3;
   color: #111827;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .comparison-card-description {
   font-family: var(--font-matter);
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--color-tx-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2768,21 +2776,23 @@ body {
   align-items: center;
   gap: 4px;
   font-family: var(--font-matter);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #047857;
-  margin-bottom: 2px;
+  margin-top: auto;
 }
 
-/* Inset thumbnail at bottom */
+/* Inset thumbnail at right side */
 .comparison-card-image-wrap {
-  padding: 0 10px 10px;
+  flex-shrink: 0;
+  width: 180px;
+  padding: 8px 8px 8px 0;
+  align-self: center;
 }
 
 .comparison-card-image {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
   display: block;
@@ -2791,6 +2801,18 @@ body {
 
 .comparison-card:hover .comparison-card-image {
   transform: scale(1.02);
+}
+
+@media (max-width: 639px) {
+  .resource-listing-page .resource-grid-shell--comparisons .comparison-card {
+    flex-direction: column;
+  }
+
+  .resource-listing-page .resource-grid-shell--comparisons .comparison-card-image-wrap {
+    width: 100%;
+    height: 140px;
+    padding: 0 10px 10px;
+  }
 }
 
 /* Redesign variables scope */
@@ -3772,10 +3794,55 @@ body {
   color: rgba(0, 0, 0, 0.2);
 }
 
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 20px;
+  text-align: center;
+  background: var(--color-bg-primary, #f9fafb);
+  border-radius: 24px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+.coming-soon-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-primary, #1a56ff);
+  margin-bottom: 24px;
+}
+.coming-soon-title {
+  font-family: var(--font-instrument);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-tx-primary, #0c0e14);
+}
+.coming-soon-text {
+  font-family: var(--font-jakarta);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-tx-secondary, #6b6f80);
+  margin-bottom: 20px;
+}
+.coming-soon-cta {
+  background: var(--color-primary, #1a56ff);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.coming-soon-cta:hover {
+  background: #1444cc;
+}
 .article-featured-image {
-  position: relative;
   max-width: 1100px;
-  aspect-ratio: 16 / 9;
+  margin-inline: auto;
   margin-top: 48px;
   margin-bottom: 80px;
   border-radius: 32px;
@@ -5014,12 +5081,12 @@ margin-inline: auto;
 .comparison-board-page .grid .comparison-card {
   flex-direction: column;
   height: 100%;
-  min-height: 150px; /* Adjust as needed for desired card height */
+  min-height: 120px; /* Reduced height for a more compact card */
 }
 
 .comparison-board-page .grid .comparison-card-image-wrap {
   width: 100%;
-  min-height: 180px;
+  min-height: 120px; /* Reduced height for compact card */
   aspect-ratio: 16 / 10;
 }
 

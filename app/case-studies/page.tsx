@@ -2,6 +2,7 @@ import { fetchAllCaseStudies } from '@/lib/sanityFetch'
 import CaseStudyCard from '@/components/CaseStudyCard'
 import ResourceAnimatedList from '@/components/ResourceAnimatedList'
 import ResourceCategoryShell from '@/components/ResourceCategoryShell'
+import ComingSoon from '@/components/ComingSoon'
 
 export const revalidate = 60
 
@@ -33,12 +34,7 @@ export default async function CaseStudiesPage() {
       gridVariant="case-studies"
     >
       {caseStudies.length === 0 ? (
-        <div className="resource-empty-state">
-          <h2 className="resource-empty-state-title">No Case Studies Found</h2>
-          <p className="resource-empty-state-text">
-            We couldn&apos;t find any case studies at this time. Please check back later.
-          </p>
-        </div>
+        <ComingSoon />
       ) : (
         <ResourceAnimatedList>
           {caseStudies.map((caseStudy) => (

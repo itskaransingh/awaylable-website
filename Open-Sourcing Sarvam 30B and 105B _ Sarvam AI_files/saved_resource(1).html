@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvam AI - AI for a Billion People</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Syne:wght@400;600;700&amp;family=Literata:wght@400;600;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0A0A0F;
+            --accent-saffron: #FF6B35;
+            --accent-teal: #00C9A7;
+            --text-warm: #C8B8A2;
+            --text-light: #FAFAF7;
+            --grid-pattern: #1a1a2e;
+            --glow-saffron: rgba(255, 107, 53, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Literata', serif;
+            background: var(--bg-dark);
+            color: var(--text-warm);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grain Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(0px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 15, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-warm);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            font-family: 'Syne', sans-serif;
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-saffron);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-saffron);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--accent-saffron);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta:hover {
+            background: #E55A2B;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .nav-cta:hover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+
+        .nav-cta:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(ellipse at center, var(--glow-saffron) 0%, transparent 70%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><pattern id="subcontinent" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse"><path d="M10,50 Q50,20 100,50 T150,50" fill="none" stroke="url(%23grad1)" stroke-width="2"/><path d="M100,50 Q150,80 200,50" fill="none" stroke="url(%23grad1)" stroke-width="2"/><path d="M150,50 Q200,20 250,50 T300,50" fill="none" stroke="url(%23grad1)" stroke-width="2"/><path d="M200,50 Q250,80 300,50" fill="none" stroke="url(%23grad1)" stroke-width="2"/><path d="M250,50 Q300,20 350,50 T400,50" fill="none" stroke="url(%23grad1)" stroke-width="2"/><path d="M300,50 Q350,80 400,50" fill="none" stroke="url(%23grad1)" stroke-width="2"/><path d="M100,70 Q200,50 300,70" fill="none" stroke="url(%23grad2)" stroke-width="2"/><path d="M200,70 Q300,50 400,70" fill="none" stroke="url(%23grad2)" stroke-width="2"/><path d="M300,70 Q400,50 500,70" fill="none" stroke="url(%23grad2)" stroke-width="2"/><path d="M100,90 Q200,70 300,90" fill="none" stroke="url(%23grad2)" stroke-width="2"/><path d="M200,90 Q300,70 400,90" fill="none" stroke="url(%23grad2)" stroke-width="2"/><path d="M300,90 Q400,70 500,90" fill="none" stroke="url(%23grad2)" stroke-width="2"/><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FF6B35;stop-opacity:0.3"/><stop offset="100%" style="stop-color:%2300C9A7;stop-opacity:0.3"/></linearGradient><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2300C9A7;stop-opacity:0.2"/><stop offset="100%" style="stop-color:%23FF6B35;stop-opacity:0.2"/></linearGradient></defs></pattern></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><g fill="none" stroke="%23FF6B35" stroke-width="0.5"><path d="M10,10 L190,10 M10,190 L190,190 M10,90 L190,90 M190,10 L190,190 M90,10 L90,190"/></g><g fill="%2300C9A7" stroke-width="0.3"><circle cx="20" cy="20" r="2"/><circle cx="180" cy="20" r="2"/><circle cx="20" cy="180" r="2"/><circle cx="180" cy="180" r="2"/><circle cx="100" cy="100" r="3"/><circle cx="50" cy="100" r="2"/><circle cx="150" cy="100" r="2"/><circle cx="100" cy="50" r="2"/><circle cx="100" cy="150" r="2"/></g></svg>');
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            animation: revealText 1s ease-out;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .hero-text .subline {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            color: var(--text-warm);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-filled {
+            background: var(--accent-saffron);
+            color: white;
+        }
+
+        .btn-filled:hover {
+            background: #E55A2B;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 2px solid var(--text-warm);
+            color: var(--text-warm);
+        }
+
+        .btn-ghost:hover {
+            background: var(--text-warm);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn:hover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+
+        .btn:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Language Strip */
+        .language-strip {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .language-strip::-webkit-scrollbar {
+            height: 2px;
+            background: transparent;
+        }
+
+        .language-strip::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .language-strip::-webkit-scrollbar-thumb {
+            background: var(--accent-saffron);
+            border-radius: 1px;
+        }
+
+        .language-strip::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-teal);
+        }
+
+        .language-list {
+            display: flex;
+            gap: 2rem;
+            padding: 0 2rem;
+            animation: scrollText 30s linear infinite;
+        }
+
+        .language-item {
+            color: var(--text-warm);
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .language-item:hover {
+            color: var(--accent-saffron);
+        }
+
+        .language-item::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-saffron);
+            transition: width 0.3s ease;
+        }
+
+        .language-item:hover::after {
+            width: 100%;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            position: relative;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark) 70%, rgba(255, 107, 53, 0.05) 100%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-saffron);
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, var(--glow-saffron) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-saffron);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .product-description {
+            color: var(--text-warm);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .product-link {
+            color: var(--text-warm);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: var(--accent-saffron);
+        }
+
+        /* Research Section */
+        .research {
+            padding: 5rem 2rem;
+            position: relative;
+            background: var(--bg-dark);
+        }
+
+        .research-layout {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.5rem;
+            color: var(--text-warm);
+            line-height: 1.4;
+            margin-bottom: 3rem;
+            padding-right: 2rem;
+            border-right: 2px solid var(--accent-saffron);
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: -20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            color: var(--accent-saffron);
+            opacity: 0.2;
+        }
+
+        .research-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            border-color: var(--accent-saffron);
+            transform: translateX(5px);
+        }
+
+        .research-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .research-abstract {
+            color: var(--text-warm);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .research-tag {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* API Section */
+        .api-section {
+            padding: 5rem 2rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(255, 107, 53, 0.1) 100%);
+        }
+
+        .api-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-saffron), transparent);
+            opacity: 0.1;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .code-language {
+            color: var(--accent-teal);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .copy-btn {
+            background: var(--accent-saffron);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #E55A2B;
+            transform: translateY(-2px);
+        }
+
+        .code-content {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #E8E8E8;
+            overflow-x: auto;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent-saffron);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-warm);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            position: relative;
+            background: var(--bg-dark);
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><pattern id="satellite" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%2300C9A7"/><circle cx="100" cy="25" r="0.8" fill="%23FF6B35"/><circle cx="25" cy="75" r="0.8" fill="%23FF6B35"/><circle cx="75" cy="75" r="0.8" fill="%2300C9A7"/><circle cx="125" cy="50" r="0.8" fill="%23FF6B35"/><circle cx="50" cy="100" r="0.8" fill="%2300C9A7"/><circle cx="150" cy="50" r="0.8" fill="%23FF6B35"/><circle cx="100" cy="25" r="0.5" fill="%2300C9A7"/><circle cx="75" cy="75" r="0.5" fill="%23FF6B35"/><circle cx="125" cy="75" r="0.5" fill="%2300C9A7"/></pattern></defs><rect width="100%" height="100%" fill="url(%23satellite)" opacity="0.03"/></svg>');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .founder-names {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .founder-name {
+            color: var(--text-warm);
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            padding: 3rem 2rem 1rem;
+            position: relative;
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: var(--text-warm);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-saffron);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-warm);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-saffron);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .newsletter {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            color: var(--text-warm);
+            padding: 0.75rem 1rem;
+            border-radius: 25px;
+            font-family: 'Syne', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--accent-saffron);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .newsletter-btn {
+            background: var(--accent-saffron);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: #E55A2B;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+            padding-top: 1rem;
+        }
+
+        .footer-logo {
+            opacity: 0.03;
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-warm);
+        }
+
+        /* Animations */
+        @keyframes revealText {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .research-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .api-container {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .subline {
+                font-size: 1.1rem;
+            }
+
+            .products-grid,
+            .research-layout,
+            .api-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .language-list {
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+        }
+
+        /* Cursor effect */
+        body {
+            cursor: none;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent-saffron);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: all 0.1s ease;
+            animation: cursorPulse 2s infinite;
+        }
+
+        @keyframes cursorPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        .cursor.hover {
+            transform: scale(2);
+            background: var(--accent-saffron);
+            border-color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="customCursor"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="24" font-family="Playfair Display, serif" font-size="18" font-weight="700">सर्वम्</text>
+                </svg>
+                <span style="font-family: &#39;Syne&#39;, sans-serif; font-weight: 700;">Sarvam AI</span>
+            </div>
+            <ul class="nav-links">
+                <li><span>Products</span></li>
+                <li><span>Research</span></li>
+                <li><span>API</span></li>
+                <li><span>About</span></li>
+                <li><span>Blog</span></li>
+            </ul>
+            <button class="nav-cta" onclick="scrollToSection(&#39;api&#39;)">Get API Access</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text scroll-reveal" style="animation-delay: 0s;">
+                <h1>AI for a Billion People.</h1>
+                <p class="subline">Built for India's languages, cultures, and contexts — from the ground up.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-filled scroll-reveal" onclick="scrollToSection(&#39;products&#39;)" style="animation-delay: 0.1s;">
+                        Explore the API
+                    </button>
+                    <button class="btn btn-ghost scroll-reveal" onclick="scrollToSection(&#39;research&#39;)" style="animation-delay: 0.2s;">
+                        Read our Research
+                    </button>
+                </div>
+            </div>
+            <div class="scroll-reveal" style="animation-delay: 0.3s;">
+                <svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="glow">
+                            <fegaussianblur stdDeviation="3" result="coloredBlur"></fegaussianblur>
+                            <femerge>
+                                <femergenode in="coloredBlur"></femergenode>
+                                <femergenode in="SourceGraphic"></femergenode>
+                            </femerge>
+                        </filter>
+                    </defs>
+                    <path d="M50,200 Q100,100 200,200 T300,200 T450,200" fill="none" stroke="#FF6B35" stroke-width="3" opacity="0.8" filter="url(#glow)"></path>
+                    <path d="M100,150 Q200,120 300,150 T400,150" fill="none" stroke="#00C9A7" stroke-width="2" opacity="0.6" filter="url(#glow)"></path>
+                    <circle cx="150" cy="150" r="8" fill="#FF6B35" opacity="0.9"></circle>
+                    <circle cx="300" cy="150" r="8" fill="#00C9A7" opacity="0.9"></circle>
+                    <circle cx="450" cy="150" r="8" fill="#FF6B35" opacity="0.9"></circle>
+                    <circle cx="250" cy="250" r="6" fill="#00C9A7" opacity="0.7"></circle>
+                    <circle cx="350" cy="250" r="6" fill="#FF6B35" opacity="0.7"></circle>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Strip -->
+    <section class="language-strip" id="language-strip">
+        <div class="language-list">
+            <div class="language-item">हिन्दी</div>
+            <div class="language-item">தமிழ்</div>
+            <div class="language-item">తెలుగు</div>
+            <div class="language-item">ಕನ್ನಡ</div>
+            <div class="language-item">മലയാളം</div>
+            <div class="language-item">বাংলা</div>
+            <div class="language-item">ગુજરાતી</div>
+            <div class="language-item">ਪੰਜਾਬੀ</div>
+            <div class="language-item">ଓଡ଼ିଆ</div>
+            <div class="language-item">মৈতৈলোন্</div>
+            <div class="language-item">मैथिली</div>
+            <div class="language-item">संस्कृतम्</div>
+            <div class="language-item">मराठी</div>
+            <div class="language-item">नेपाली</div>
+            <div class="language-item">असमिया</div>
+            <div class="language-item">सिन्धी</div>
+            <div class="language-item">उर्दू</div>
+            <div class="language-item">कश्मीरी</div>
+            <div class="language-item">कोस़ि</div>
+            <div class="language-item">मैथिली</div>
+            <div class="language-item">राजस्थानी</div>
+            <div class="language-item">उडिया</div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title scroll-reveal" style="animation-delay: 0.4s;">Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card scroll-reveal" style="animation-delay: 0.5s;">
+                <h3 class="product-name">Sarvam-1</h3>
+                <p class="product-description">Our flagship foundation model trained from scratch for Indian languages and contexts.</p>
+                <span class="product-link">
+                    Learn more →
+                </span>
+            </div>
+            <div class="product-card scroll-reveal" style="animation-delay: 0.6s;">
+                <h3 class="product-name">Shuka</h3>
+                <p class="product-description">Voice-based AI assistant with natural multilingual conversation capabilities.</p>
+                <span class="product-link">
+                    Learn more →
+                </span>
+            </div>
+            <div class="product-card scroll-reveal" style="animation-delay: 0.7s;">
+                <h3 class="product-name">Translate API</h3>
+                <p class="product-description">Real-time translation between Indian languages with contextual accuracy.</p>
+                <span class="product-link">
+                    Learn more →
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="research" id="research">
+        <div class="research-layout">
+            <div class="quote scroll-reveal" style="animation-delay: 0.8s;">
+                "We don't adapt Western models to India. We build from Bharat."
+            </div>
+            <div class="research-cards">
+                <div class="research-card scroll-reveal" style="animation-delay: 0.9s;">
+                    <h4 class="research-title">Indic LLM Architecture</h4>
+                    <p class="research-abstract">A novel transformer architecture optimized for India's linguistic diversity and morphological complexity.</p>
+                    <span class="research-tag">NLP</span>
+                </div>
+                <div class="research-card scroll-reveal" style="animation-delay: 1s;">
+                    <h4 class="research-title">Multilingual Speech Synthesis</h4>
+                    <p class="research-abstract">Zero-shot speech synthesis across 11+ Indian languages with natural prosody.</p>
+                    <span class="research-tag">Speech</span>
+                </div>
+                <div class="research-card scroll-reveal" style="animation-delay: 1.1s;">
+                    <h4 class="research-title">Cultural Context Embedding</h4>
+                    <p class="research-abstract">Embedding cultural context and regional nuances in language models.</p>
+                    <span class="research-tag">Indic LLMs</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <span class="product-link" style="font-size: 1.1rem; font-weight: 600;">
+                    View all research →
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section class="api-section" id="api">
+        <div class="api-container">
+            <div class="code-block scroll-reveal" style="animation-delay: 1.2s;">
+                <div class="code-header">
+                    <span class="code-language">JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre class="code-content">// Translate Hindi to English
+const response = await fetch('https://api.sarvam.ai/translate', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR_API_KEY'
+    },
+    body: JSON.stringify({
+        source: 'hi',
+        target: 'en',
+        text: 'नमस्ते दुनिया'
+    })
+});
+
+const result = await response.json();
+console.log(result.translation); // "Hello World"</pre>
+            </div>
+            <div class="stats-container scroll-reveal" style="animation-delay: 1.3s;">
+                <div class="stat-card">
+                    <div class="stat-number">11+</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">&lt;200ms</div>
+                    <div class="stat-label">Latency</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-filled scroll-reveal" onclick="scrollToSection(&#39;api&#39;)" style="animation-delay: 1.4s;">
+                    Start building free →
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content scroll-reveal" style="animation-delay: 1.5s;">
+            <p class="about-text">
+                Sarvam was founded with one belief — that the next billion internet users deserve AI that truly understands them.
+                We're building AI systems that honor India's incredible linguistic diversity and cultural richness.
+            </p>
+            <div class="founder-names">
+                <span class="founder-name">Dr. Vivek Raghavan</span>
+                <span class="founder-name">Dr. Pratyush Kumar</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul>
+                    <li><span>Sarvam-1</span></li>
+                    <li><span>Shuka</span></li>
+                    <li><span>Translate API</span></li>
+                    <li><span>Speech API</span></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Research</h3>
+                <ul>
+                    <li><span>Papers</span></li>
+                    <li><span>Blog</span></li>
+                    <li><span>Open Source</span></li>
+                    <li><span>Documentation</span></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><span>About</span></li>
+                    <li><span>Careers</span></li>
+                    <li><span>Contact</span></li>
+                    <li><span>Privacy</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links" style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <div class="social-link">GitHub</div>
+            <div class="social-link">Twitter</div>
+            <div class="social-link">LinkedIn</div>
+        </div>
+        <div class="newsletter" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <input type="email" class="newsletter-input" placeholder="Email address">
+            <button class="newsletter-btn">Subscribe</button>
+        </div>
+        <div class="footer-bottom">
+            <p style="text-align: center;">
+                © 2026 Sarvam AI. Built with ❤️ for Bharat.
+                </p><div class="footer-logo" style="margin-top: 0.5rem;">सर्वम्</div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('customCursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll to sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.parentElement.querySelector('.code-content');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeBlock.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            // Update button text temporarily
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = '#00C9A7';
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
+
+        // Language strip auto-scroll
+        const languageStrip = document.querySelector('.language-strip');
+        const languageList = document.querySelector('.language-list');
+
+        function scrollLanguageStrip() {
+            const containerWidth = languageStrip.offsetWidth;
+            const contentWidth = languageList.offsetWidth;
+            const scrollSpeed = 30;
+
+            if (contentWidth > containerWidth) {
+                languageList.style.transform = `translateX(-${scrollSpeed}px)`;
+
+                setTimeout(() => {
+                    languageList.style.transform = 'translateX(0)';
+                }, 100);
+            }
+        }
+
+        setInterval(scrollLanguageStrip, 100);
+
+        // Add parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                const moveX = (x - 0.5) * 20;
+                const moveY = (y - 0.5) * 20;
+                heroContent.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.scroll-reveal').forEach((el, index) => {
+                    el.style.animationDelay = `${index * 0.1}s`;
+                });
+            }, 100);
+        });
+
+        // Add hover effect for cursor
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.classList.contains('btn') || e.target.tagName === 'A') {
+                cursor.classList.add('hover');
+            }
+        });
+
+        document.addEventListener('mouseout', () => {
+            cursor.classList.remove('hover');
+        });
+
+        // Performance optimization: Debounce scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                // Scroll-based animations here
+            });
+        });
+    </script>
+
+
+</body></html>
