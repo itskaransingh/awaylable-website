@@ -1,5 +1,6 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import VideoModal from "@/components/VideoModal";
 
 export default function HomeMarkup() {
   return (
@@ -1079,11 +1080,7 @@ export default function HomeMarkup() {
                 Start Free Trial
               </button>
             </a>
-            <a href="https://cal.com/atomnik/awaylable-24x7-customer-demo?source=book-a-demo" target="_blank" rel="noopener noreferrer">
-              <button className="cta-outline-btn">
-                Book a Demo
-              </button>
-            </a>
+            <VideoModal videoId="o5tM78ZVcmw" />
           </div>
           <div className="cta-contact-links">
             <a href="mailto:info@atomnik.com">
